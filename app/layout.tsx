@@ -1,3 +1,4 @@
+const WEBSITELINK = process.env.NEXT_PUBLIC_PORTFOLIOSITE;
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -9,6 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Raumil's Portfolio",
   description: "a portfolio website for Raumil Dhandhukia",
+  metadataBase: new URL(`${WEBSITELINK}`),
+  openGraph: {
+    images: "./opengraph-image.jpg",
+  },
 };
 
 export default function RootLayout({
