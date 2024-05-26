@@ -3,7 +3,6 @@ const PORTFOLIOSITE = process.env.NEXT_PUBLIC_PORTFOLIOSITE;
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -13,7 +12,7 @@ export const gridItems = [
     title: "Currently building a Dog Meetup App",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+    imgClassName: "absolute right-0 -bottom-14 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "/b5.svg",
     spareImg: "/grid.svg",
