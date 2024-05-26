@@ -3,11 +3,11 @@ import { MacbookScroll } from "./ui/MacbookScroll";
 
 const Macbook = () => {
   return (
-    <div className="-mt-[400px] md:-mt-80 -mb-[700px] md:-mb-0 ">
+    <div className="-mt-[400px] md:-mt-80 -mb-[700px] md:-mb-0">
       <MacbookScroll
-        src="/final.png"
+        src="/github.png"
         showGradient={true}
-        title="What I know and use to build these awesome solutions."
+        title="To know more about what I code and how I code, visit my Github"
       />
     </div>
   );
