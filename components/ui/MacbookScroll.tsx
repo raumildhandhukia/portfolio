@@ -60,12 +60,12 @@ export const MacbookScroll = ({
     [0, 0.3],
     [0.6, isMobile ? 1 : 1.5]
   );
-  let translate;
-  if (isMobile) {
-    translate = useTransform(scrollYProgress, [0, 1], [0, 800]);
-  } else {
-    translate = useTransform(scrollYProgress, [0, 1], [0, 400]);
-  }
+
+  const translate = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 800] : [0, 400]
+  );
 
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
@@ -139,7 +139,12 @@ export const Lid = ({
   src?: string;
 }) => {
   return (
-    <div className="relative [perspective:800px]">
+    <div
+      className="relative [perspective:800px]"
+      onClick={() => {
+        window.open("https://github.com/raumildhandhukia");
+      }}
+    >
       <div
         style={{
           transform: "perspective(800px) rotateX(-25deg) translateZ(0px)",
@@ -173,9 +178,9 @@ export const Lid = ({
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
         <Image
           src={src as string}
-          alt="aceternity logo"
           fill
-          className="object-cover object-left-top absolute rounded-lg inset-0 h-full w-full"
+          alt="aceternity logo"
+          className="object-cover object-left-top absolute rounded-lg inset-0"
         />
       </motion.div>
     </div>
