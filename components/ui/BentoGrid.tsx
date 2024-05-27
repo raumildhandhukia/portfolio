@@ -137,7 +137,7 @@ export const BentoGridItem = ({
           {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
           {id === 6 && (
-            <div className="mt-5 relative">
+            <div className="mt-5 relative flex justify-center items-center">
               <div
                 className={`absolute -bottom-5 right-0 ${
                   copied ? "block" : "block"
@@ -153,6 +153,7 @@ export const BentoGridItem = ({
                 position="left"
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31]"
+                widthProperty="w-max"
               />
             </div>
           )}

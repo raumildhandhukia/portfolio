@@ -47,6 +47,7 @@ const Hero = () => {
               title="Download Resume"
               icon={<MdDownload />}
               position="right"
+              widthProperty="w-full"
               handleClick={() => {
                 const link = document.createElement("a");
                 link.href = process.env.NEXT_PUBLIC_PORTFOLIOSITE + RESUME_PATH;
@@ -58,6 +59,7 @@ const Hero = () => {
             />
             <a href="#about">
               <MagicButton
+                widthProperty="w-full"
                 title="Show my work"
                 icon={<FaLocationArrow />}
                 position="right"
