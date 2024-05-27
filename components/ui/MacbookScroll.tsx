@@ -81,11 +81,13 @@ export const MacbookScroll = ({
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center"
+        className="dark:text-white text-neutral-800 text-2xl font-bold mb-20 text-center"
       >
         {title || (
-          <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
+          <span className="text-purple">
+            <span className="text-red-300 text-2xl">Visit my GitHub,</span>
+            <br />
+            to know more about what and how I code.
           </span>
         )}
       </motion.h2>
@@ -140,7 +142,7 @@ export const Lid = ({
 }) => {
   return (
     <div
-      className="relative [perspective:800px]"
+      className="relative [perspective:800px] cursor-pointer"
       onClick={() => {
         window.open("https://github.com/raumildhandhukia");
       }}
@@ -574,7 +576,7 @@ export const KBtn = ({
     <div
       className={cn(
         "p-[0.5px] rounded-[4px]",
-        backlit && "bg-white/[0.2] shadow-xl shadow-white"
+        backlit && "bg-red-800/[0.5] shadow-xl shadow-indigo-500"
       )}
     >
       <div

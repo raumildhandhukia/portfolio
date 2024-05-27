@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+const EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "react-lottie";
@@ -66,7 +67,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = EMAIL || "";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -135,7 +136,60 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
+
+          {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
+
+          {/* Tech stack list div */}
+          {id === 3 && (
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+              {/* tech stack lists */}
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+                {leftLists.map((item, i) => (
+                  <span
+                    key={i}
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+              </div>
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                {rightLists.map((item, i) => (
+                  <span
+                    key={i}
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {id === 6 && (
+            <div className="mt-5 relative">
+              <div
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
+              >
+                {/* <img src="/confetti.gif" alt="confetti" /> */}
+                <Lottie options={defaultOptions} height={200} width={400} />
+              </div>
+
+              <MagicButton
+                title={copied ? "Email is Copied!" : "Copy my email address"}
+                icon={<IoCopyOutline />}
+                position="left"
+                handleClick={handleCopy}
+                otherClasses="!bg-[#161A31]"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
