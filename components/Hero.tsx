@@ -1,8 +1,11 @@
 import { FaLocationArrow } from "react-icons/fa6";
+import { MdDownload } from "react-icons/md";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+
+const RESUME_PATH = "/resume/Raumil_Resume.pdf";
 
 const Hero = () => {
   return (
@@ -30,23 +33,37 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
+      <div className="flex justify-center relative my-20 lg:my-0 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Transforming Real Life Problems into Digital Solutions
           </p>
           <TextGenerateEffect
-            words="Hi! I'm Raumil, a Full Stack Developer based in United States"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Hi! I'm Raumil Dhandhukia, a Full Stack Developer based in United States"
+            className="text-center text-[40px] md:text-4xl lg:text-6xl"
           />
-
-          <a href="#about">
+          <div className="flex flex-col md:flex-row gap-5">
             <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
+              title="Download Resume"
+              icon={<MdDownload />}
               position="right"
+              handleClick={() => {
+                const link = document.createElement("a");
+                link.href = process.env.NEXT_PUBLIC_PORTFOLIOSITE + RESUME_PATH;
+                link.download = "Raumil_Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             />
-          </a>
+            <a href="#about">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
