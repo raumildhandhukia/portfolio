@@ -89,7 +89,7 @@ export const projects = [
   {
     id: 5,
     title: "macaroni language",
-    des: "a susscessful attempt to develop a programmign language using Java and ANTLR.",
+    des: "a susscessful attempt to develop a programming language using Java and ANTLR.",
     img: "/macaroni.png",
     iconLists: ["/java.png"],
     link: "https://github.com/raumildhandhukia/macaroni",
