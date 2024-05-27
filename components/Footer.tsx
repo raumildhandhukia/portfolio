@@ -32,7 +32,12 @@ const Footer = () => {
             <h3 className="text-white-200 text-lg font-light ml-2"></h3>
             <h3 className="text-red-400 text-xl font-light ml-2 min-h-[30px] max-h-[30px]">
               <Typewriter
-                words={["Hire Me", "Let's Talk", "Hire Me", "Lets Collaborate"]}
+                words={[
+                  "Hire Me",
+                  "Let's Talk",
+                  "Hire Me",
+                  "Let's Collaborate",
+                ]}
                 loop={true}
                 cursor={true}
               />

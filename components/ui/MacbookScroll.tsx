@@ -43,10 +43,14 @@ export const MacbookScroll = ({
   });
 
   const [isMobile, setIsMobile] = useState(false);
+  const [isLargerThanMacbook, setIsLargerThanMacbook] = useState(false);
 
   useEffect(() => {
     if (window && window.innerWidth < 768) {
       setIsMobile(true);
+    }
+    if (window && window.innerWidth > 1440) {
+      setIsLargerThanMacbook(true);
     }
   }, []);
 
@@ -64,7 +68,7 @@ export const MacbookScroll = ({
   const translate = useTransform(
     scrollYProgress,
     [0, 1],
-    isMobile ? [0, 800] : [0, 400]
+    isMobile ? [0, 800] : isLargerThanMacbook ? [0, 900] : [0, 400]
   );
 
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
