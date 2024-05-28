@@ -70,7 +70,7 @@ export const MacbookScroll = ({
   const translate = useTransform(
     scrollYProgress,
     [0, 1],
-    isMobile ? [0, 800] : isLargerThanMacbook ? [0, 900] : [0, 400]
+    isMobile ? [0, 1900] : isLargerThanMacbook ? [0, 1500] : [0, 1500]
   );
 
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
@@ -80,7 +80,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.65]"
+      className="flex flex-col items-center md:py-20 2xl:py-80 justify-start flex-shrink-0 [perspective:800px] transform scale-[0.30] md:scale-[0.65] 2xl:scale-100"
     >
       <motion.h2
         style={{
@@ -97,38 +97,50 @@ export const MacbookScroll = ({
           </span>
         )}
       </motion.h2>
-      {/* Lid */}
-      <Lid
-        analyze={analyze}
-        src={src}
-        scaleX={scaleX}
-        scaleY={scaleY}
-        rotate={rotate}
-        translate={translate}
-      />
-      {/* Base area */}
-      <div className="h-[22rem] w-[32rem] bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
-        {/* above keyboard bar */}
-        <div className="h-10 w-full relative">
-          <div className="absolute inset-x-0 mx-auto w-[80%] h-4 bg-[#050505]" />
+      <div className="flex justify-evenly items-start">
+        <div className=" md:w-[20vw] mr-36 md:mr-0">
+          <LeftSideStack />
         </div>
-        <div className="flex relative">
-          <div className="mx-auto w-[10%] overflow-hidden  h-full">
-            <SpeakerGrid />
-          </div>
-          <div className="mx-auto w-[80%] h-full">
-            <Keypad />
-          </div>
-          <div className="mx-auto w-[10%] overflow-hidden  h-full">
-            <SpeakerGrid />
+        <div className="w-[70] md:w-[80vw] 2xl:w-[45vw] flex justify-center items-center">
+          <div>
+            {/* Lid */}
+            <Lid
+              analyze={analyze}
+              src={src}
+              scaleX={scaleX}
+              scaleY={scaleY}
+              rotate={rotate}
+              translate={translate}
+            />
+            {/* Base area */}
+            <div className="h-[22rem] w-[32rem] bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
+              {/* above keyboard bar */}
+              <div className="h-10 w-full relative">
+                <div className="absolute inset-x-0 mx-auto w-[80%] h-4 bg-[#050505]" />
+              </div>
+              <div className="flex relative">
+                <div className="mx-auto w-[10%] overflow-hidden  h-full">
+                  <SpeakerGrid />
+                </div>
+                <div className="mx-auto w-[80%] h-full">
+                  <Keypad />
+                </div>
+                <div className="mx-auto w-[10%] overflow-hidden  h-full">
+                  <SpeakerGrid />
+                </div>
+              </div>
+              <Trackpad />
+              <div className="h-2 w-20 mx-auto inset-x-0 absolute bottom-0 bg-gradient-to-t from-[#272729] to-[#050505] rounded-tr-3xl rounded-tl-3xl" />
+              {showGradient && (
+                <div className="h-40 w-full absolute bottom-0 inset-x-0 bg-gradient-to-t dark:from-black from-white via-white dark:via-black to-transparent z-50"></div>
+              )}
+              {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
+            </div>
           </div>
         </div>
-        <Trackpad />
-        <div className="h-2 w-20 mx-auto inset-x-0 absolute bottom-0 bg-gradient-to-t from-[#272729] to-[#050505] rounded-tr-3xl rounded-tl-3xl" />
-        {showGradient && (
-          <div className="h-40 w-full absolute bottom-0 inset-x-0 bg-gradient-to-t dark:from-black from-white via-white dark:via-black to-transparent z-50"></div>
-        )}
-        {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
+        <div className=" md:w-[20vw] ml-36 md:ml-0">
+          <RightSideStack />
+        </div>
       </div>
     </div>
   );
@@ -673,6 +685,13 @@ export const OptionKey = ({ className }: { className: string }) => {
 
 const AceternityLogo = () => {
   return (
+    <div>
+      <p className="heading">
+        My <span className="text-purple">Tech Stack</span>
+      </p>
+    </div>
+  );
+  return (
     <svg
       width="66"
       height="65"
@@ -689,5 +708,118 @@ const AceternityLogo = () => {
         strokeLinecap="round"
       />
     </svg>
+  );
+};
+
+const LeftSideStack = () => {
+  return (
+    <div className="flex justify-start items-start">
+      <div className="flex flex-col items-start gap-10">
+        <div className="teck-stack-item-wrapper">
+          <Image src="/next.svg" width={50} height={50} alt="nextjs" />
+          <p className="tech-stack-p">Next.js</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/re.svg" width={50} height={50} alt="react" />
+          <p className="tech-stack-p">React</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/ts.svg" width={50} height={50} alt="ts" />
+          <p className="tech-stack-p">Typescript</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/js.svg" width={50} height={50} alt="js" />
+          <p className="tech-stack-p">JavaScript</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/tail.svg" width={50} height={50} alt="js" />
+          <p className="tech-stack-p">tailwind</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/html.svg" width={50} height={50} alt="html" />
+          <p className="tech-stack-p">HTML</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/css.svg" width={50} height={50} alt="css" />
+          <p className="tech-stack-p">CSS</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/docker.svg" width={50} height={50} alt="docker" />
+          <p className="tech-stack-p">Docker</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/socket.png" width={50} height={50} alt="socket" />
+          <p className="tech-stack-p">Socket.io</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/aws.svg" width={50} height={50} alt="aws" />
+          <p className="tech-stack-p">AWS</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/unity.svg" width={50} height={50} alt="unity" />
+          <p className="tech-stack-p">Unity</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/git.svg" width={50} height={50} alt="git" />
+          <p className="tech-stack-p">Git</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+const RightSideStack = () => {
+  return (
+    <div className="flex flex-col ">
+      <div className="flex flex-col items-start gap-10 ">
+        <div className="teck-stack-item-wrapper">
+          <Image src="/nj.svg" width={50} height={50} alt="nodejs" />
+          <p className="tech-stack-p">Node.js</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/authlogo.png" width={50} height={50} alt="authjs" />
+          <p className="tech-stack-p">Auth.js</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/express.png" width={50} height={50} alt="express" />
+          <p className="tech-stack-p">Express</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/py.svg" width={50} height={50} alt="python" />
+          <p className="tech-stack-p">Python</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/flask.svg" width={50} height={50} alt="flask" />
+          <p className="tech-stack-p">Flask</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/java.png" width={50} height={50} alt="java" />
+          <p className="tech-stack-p">Java</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/prisma.svg" width={50} height={50} alt="prisma" />
+          <p className="tech-stack-p">Prisma</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/mongo.svg" width={50} height={50} alt="mongo" />
+          <p className="tech-stack-p">MongoDB</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/pgsql.svg" width={50} height={50} alt="pgsql" />
+          <p className="tech-stack-p">PostgreSQL</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/mysql.svg" width={50} height={50} alt="mysql" />
+          <p className="tech-stack-p">MySQL</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/rest.png" width={50} height={50} alt="restapi" />
+          <p className="tech-stack-p">REST Api</p>
+        </div>
+        <div className="teck-stack-item-wrapper">
+          <Image src="/graphql.svg" width={50} height={50} alt="graph" />
+          <p className="tech-stack-p">GraphQL</p>
+        </div>
+      </div>
+    </div>
   );
 };

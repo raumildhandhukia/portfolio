@@ -82,4 +82,13 @@
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
+  .tech-stack-p {
+    @apply font-bold text-4xl md:text-5xl text-left w-max text-purple mb-10;
+  }
+  .teck-stack-item-wrapper {
+    @apply flex justify-center items-start gap-5;
+  }
+  .tech-stack-item {
+    @apply flex flex-row justify-center gap-6;
+  }
 }
