@@ -5,8 +5,9 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import Link from "next/link";
+import ReactGA from "react-ga";
 
-const RecentProjects = () => {
+const RecentProjects = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
@@ -18,6 +19,11 @@ const RecentProjects = () => {
         {projects.map((item) => (
           <div
             onClick={() => {
+              analyze.event({
+                category: "Project",
+                action: "Clicked Project",
+                label: item.title,
+              });
               window.open(item.link);
             }}
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"

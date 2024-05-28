@@ -9,9 +9,10 @@ import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
 import Link from "next/link";
+import ReactGA from "react-ga";
 import { Typewriter } from "react-simple-typewriter";
 
-const Footer = () => {
+const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (
     <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
       {/* background grid */}
@@ -51,6 +52,10 @@ const Footer = () => {
             <GoCopy
               className="w-4 h-4 cursor-pointer"
               onClick={() => {
+                analyze.event({
+                  category: "Contact",
+                  action: "Copied Phone",
+                });
                 navigator.clipboard.writeText(PHONE || "");
               }}
             />
@@ -61,6 +66,10 @@ const Footer = () => {
             <GoCopy
               className="w-4 h-4 cursor-pointer"
               onClick={() => {
+                analyze.event({
+                  category: "Contact",
+                  action: "Copied Email",
+                });
                 navigator.clipboard.writeText(EMAIL || "");
               }}
             />
