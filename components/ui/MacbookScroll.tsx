@@ -724,7 +724,7 @@ const LeftSideStack = () => {
           <p className="tech-stack-p">React</p>
         </div>
         <div className="teck-stack-item-wrapper">
-          <Image src="/ts.svg" width={50} height={50} alt="ts" />
+          <Image src="/types.svg" width={50} height={50} alt="ts" />
           <p className="tech-stack-p">Typescript</p>
         </div>
         <div className="teck-stack-item-wrapper">
