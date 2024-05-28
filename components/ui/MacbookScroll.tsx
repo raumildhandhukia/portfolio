@@ -25,6 +25,9 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import ReactGA from "react-ga";
+import { TextGenerateEffect } from "./TextGenerateEffect";
+import MatrixRain from "./MatrixRain";
+import { Typewriter } from "react-simple-typewriter";
 export const MacbookScroll = ({
   analyze,
   src,
@@ -46,6 +49,7 @@ export const MacbookScroll = ({
 
   const [isMobile, setIsMobile] = useState(false);
   const [isLargerThanMacbook, setIsLargerThanMacbook] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (window && window.innerWidth < 768) {
@@ -82,11 +86,13 @@ export const MacbookScroll = ({
       ref={ref}
       className="flex flex-col items-center md:py-20 2xl:py-80 justify-start flex-shrink-0 [perspective:800px] transform scale-[0.30] md:scale-[0.65] 2xl:scale-100"
     >
-      <motion.h2
-        style={{
-          translateY: textTransform,
-          opacity: textOpacity,
-        }}
+      <h2
+        style={
+          {
+            // translateY: textTransform,
+            // opacity: textOpacity,
+          }
+        }
         className="dark:text-white text-neutral-800 text-2xl font-bold mb-20 text-center"
       >
         {title || (
@@ -96,7 +102,7 @@ export const MacbookScroll = ({
             to know more about what and how I code.
           </span>
         )}
-      </motion.h2>
+      </h2>
       <div className="flex justify-evenly items-start">
         <div className=" md:w-[20vw] mr-36 md:mr-0">
           <LeftSideStack />
@@ -111,6 +117,8 @@ export const MacbookScroll = ({
               scaleY={scaleY}
               rotate={rotate}
               translate={translate}
+              isVisible={isVisible}
+              setIsVisible={setIsVisible}
             />
             {/* Base area */}
             <div className="h-[22rem] w-[32rem] bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
@@ -134,8 +142,17 @@ export const MacbookScroll = ({
               {showGradient && (
                 <div className="h-40 w-full absolute bottom-0 inset-x-0 bg-gradient-to-t dark:from-black from-white via-white dark:via-black to-transparent z-50"></div>
               )}
-              {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
             </div>
+            {isVisible && (
+              <div className="flex justify-center items-center mt-[10vh] max-w-[25vw]">
+                <p className="text-purple text-center font-bold text-4xl">
+                  this is what I use to code but I am always{" "}
+                  <span className="text-red-500">
+                    excited to learn new things
+                  </span>
+                </p>
+              </div>
+            )}
           </div>
         </div>
         <div className=" md:w-[20vw] ml-36 md:ml-0">
@@ -153,12 +170,16 @@ export const Lid = ({
   rotate,
   translate,
   src,
+  isVisible,
+  setIsVisible,
 }: {
   analyze: typeof ReactGA;
   scaleX: MotionValue<number>;
   scaleY: MotionValue<number>;
   rotate: MotionValue<number>;
   translate: MotionValue<number>;
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
   src?: string;
 }) => {
   return (
@@ -184,11 +205,14 @@ export const Lid = ({
           style={{
             boxShadow: "0px 2px 0px 2px var(--neutral-900) inset",
           }}
-          className="absolute inset-0 bg-[#010101] rounded-lg flex items-center justify-center"
+          className="absolute inset-0 bg-black rounded-lg flex items-center justify-center"
         >
-          <span className="text-white">
-            <AceternityLogo />
-          </span>
+          <div className="h-[10.8rem] w-[31rem] border rounded-lg bg-gradient-to-tr from-black via-indigo-900 to-black-100 flex items-center justify-center">
+            {/* <MatrixRain /> */}
+            <span className="text-white bg-blend-overlay">
+              <MacbookHeading isVisible={isVisible} />
+            </span>
+          </div>
         </div>
       </div>
       <motion.div
@@ -200,6 +224,7 @@ export const Lid = ({
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
+        onUpdate={() => setIsVisible(true)}
         className="h-96 w-[32rem] absolute inset-0 bg-[#010101] rounded-2xl p-2"
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
@@ -683,31 +708,26 @@ export const OptionKey = ({ className }: { className: string }) => {
   );
 };
 
-const AceternityLogo = () => {
+const MacbookHeading = ({ isVisible }: { isVisible: boolean }) => {
   return (
     <div>
-      <p className="heading">
-        My <span className="text-purple">Tech Stack</span>
-      </p>
+      {isVisible ? (
+        <div className="text-red-500 font-bold text-4xl">
+          <Typewriter
+            words={[
+              "My Tech Stack",
+              "My Arsenal",
+              "My Tools",
+              "My Skills",
+              "My Stack",
+              "My Tech",
+            ]}
+            loop={true}
+            cursor={true}
+          />
+        </div>
+      ) : null}
     </div>
-  );
-  return (
-    <svg
-      width="66"
-      height="65"
-      viewBox="0 0 66 65"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-3 w-3 text-white"
-    >
-      <path
-        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-        stroke="currentColor"
-        strokeWidth="15"
-        strokeMiterlimit="3.86874"
-        strokeLinecap="round"
-      />
-    </svg>
   );
 };
 
