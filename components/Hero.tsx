@@ -4,10 +4,11 @@ import { MdDownload } from "react-icons/md";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import ReactGA from "react-ga";
 
 const RESUME_PATH = "/resume/Raumil_Resume.pdf";
 
-const Hero = () => {
+const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -49,6 +50,10 @@ const Hero = () => {
               position="right"
               widthProperty="w-full"
               handleClick={() => {
+                analyze.event({
+                  category: "Download",
+                  action: "Downloaded Resume",
+                });
                 const link = document.createElement("a");
                 link.href = process.env.NEXT_PUBLIC_PORTFOLIOSITE + RESUME_PATH;
                 link.download = "Raumil_Resume.pdf";

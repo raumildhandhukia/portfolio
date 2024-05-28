@@ -24,13 +24,15 @@ import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
-
+import ReactGA from "react-ga";
 export const MacbookScroll = ({
+  analyze,
   src,
   showGradient,
   title,
   badge,
 }: {
+  analyze: typeof ReactGA;
   src?: string;
   showGradient?: boolean;
   title?: string | React.ReactNode;
@@ -97,6 +99,7 @@ export const MacbookScroll = ({
       </motion.h2>
       {/* Lid */}
       <Lid
+        analyze={analyze}
         src={src}
         scaleX={scaleX}
         scaleY={scaleY}
@@ -132,12 +135,14 @@ export const MacbookScroll = ({
 };
 
 export const Lid = ({
+  analyze,
   scaleX,
   scaleY,
   rotate,
   translate,
   src,
 }: {
+  analyze: typeof ReactGA;
   scaleX: MotionValue<number>;
   scaleY: MotionValue<number>;
   rotate: MotionValue<number>;
@@ -148,6 +153,10 @@ export const Lid = ({
     <div
       className="relative [perspective:800px] cursor-pointer"
       onClick={() => {
+        analyze.event({
+          category: "GitHub",
+          action: "Clicked GitHub From Macbook Scroll",
+        });
         window.open("https://github.com/raumildhandhukia");
       }}
     >
