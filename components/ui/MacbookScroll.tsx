@@ -107,7 +107,7 @@ export const MacbookScroll = ({
         <div className=" md:w-[20vw] mr-36 md:mr-0">
           <LeftSideStack />
         </div>
-        <div className="w-[70] md:w-[80vw] 2xl:w-[45vw] flex justify-center items-center">
+        <div className="w-[100vw] md:w-[80vw] 2xl:w-[45vw] flex justify-center items-center">
           <div>
             {/* Lid */}
             <Lid
@@ -144,7 +144,7 @@ export const MacbookScroll = ({
               )}
             </div>
             {isVisible && (
-              <div className="flex justify-center items-center mt-[10vh] max-w-[25vw]">
+              <div className="flex justify-center items-center mt-[10vh] md:max-w-[40vw] 2xl:max-w-[25vw]">
                 <p className="text-purple text-center font-bold text-4xl">
                   this is what I use to code but I am always{" "}
                   <span className="text-red-500">
