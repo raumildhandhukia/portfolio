@@ -4,7 +4,7 @@ import ReactGA from "react-ga";
 
 const Macbook = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (
-    <div className="-mt-[400px] md:-mt-80 -mb-[700px] md:-mb-0">
+    <div className="-mt-[85vh] -mb-[60vh] md:-mt-72 md:-mb-0">
       <MacbookScroll src="/github.png" showGradient={true} analyze={analyze} />
     </div>
   );
