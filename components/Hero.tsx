@@ -38,6 +38,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
     const link = document.createElement("a");
     link.href = process.env.NEXT_PUBLIC_PORTFOLIOSITE + RESUME_PATH + type;
     link.download = "RaumilD_Resume" + type;
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
