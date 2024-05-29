@@ -107,29 +107,22 @@ export const projects = [
 
 export const workExperience = [
   {
-    id: 2,
-    title: "Software Developer - ForkLyft",
-    desc: "Integrated GPS into fleet management systems and reduced operational costs using React.",
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
-  },
-  {
     id: 1,
     title: "Software Engineer - Setu Consulting Services Pvt. Ltd.",
     desc: "Developed and Deployed CRM and ERP solitons for clients. using Python, PostgreSQL, and JavaScript.",
     className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp4.svg",
+    thumbnail: "/exp1.svg",
   },
 
   {
-    id: 3,
+    id: 2,
     title: "Developer Intern - Emipro Technologies Pvt. Ltd.",
     desc: "Assisted in the development of Odoo ERP modules and maintained existing codebases using Python.",
     className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp3.svg",
+    thumbnail: "/exp4.svg",
   },
   {
-    id: 4,
+    id: 3,
     title: "Technology Consultant - Arizona State University",
     desc: " Customer-specific customization on top of Canvas LMS and developing custom plugins using JavaScript.",
     className: "md:col-span-2",

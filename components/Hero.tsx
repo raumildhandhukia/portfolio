@@ -4,11 +4,44 @@ import { MdDownload } from "react-icons/md";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import ReactGA from "react-ga4";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
-const RESUME_PATH = "/resume/Raumil_Resume.pdf";
+import { Button } from "@/components/ui/button";
+import ReactGA from "react-ga4";
+import { useEffect, useState } from "react";
+
+const RESUME_PATH = "/resume/RaumilD_Resume";
 
 const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+  const handleClick = (type: ".docx" | ".pdf") => {
+    analyze.event({
+      category: "Download",
+      action: `Downloaded Resume ${type} file`,
+    });
+    const link = document.createElement("a");
+    link.href = process.env.NEXT_PUBLIC_PORTFOLIOSITE + RESUME_PATH + type;
+    link.download = "RaumilD_Resume" + type;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -44,24 +77,51 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
             className="text-center text-[40px] md:text-4xl lg:text-6xl"
           />
           <div className="flex flex-col md:flex-row gap-5">
-            <MagicButton
-              title="Download Resume"
-              icon={<MdDownload />}
-              position="right"
-              widthProperty="w-full"
-              handleClick={() => {
-                analyze.event({
-                  category: "Download",
-                  action: "Downloaded Resume",
-                });
-                const link = document.createElement("a");
-                link.href = process.env.NEXT_PUBLIC_PORTFOLIOSITE + RESUME_PATH;
-                link.download = "Raumil_Resume.pdf";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-            />
+            <Drawer>
+              <DrawerTrigger>
+                <button>
+                  <MagicButton
+                    title="Download Resume"
+                    icon={<MdDownload />}
+                    position="right"
+                    widthProperty="w-full"
+                  />
+                </button>
+              </DrawerTrigger>
+              <DrawerContent className="w-[90vw] ml-[5vw] md:w-[30vw] md:ml-[35vw]">
+                <DrawerHeader>
+                  <div className="flex w-full justify-center mt-2 mb-2 md:-mb-5">
+                    <DrawerTitle className="text-purple">
+                      Click on one of the file type to download
+                    </DrawerTitle>
+                  </div>
+                </DrawerHeader>
+                <DrawerDescription>
+                  <div className="flex justify-center gap-5">
+                    <DrawerClose>
+                      <MagicButton
+                        title="PDF"
+                        icon={<MdDownload />}
+                        position="right"
+                        widthProperty="md:w-[10vw]"
+                        handleClick={() => handleClick(".pdf")}
+                      />
+                    </DrawerClose>
+                    <DrawerClose>
+                      <MagicButton
+                        title="DOCX"
+                        icon={<MdDownload />}
+                        position="right"
+                        widthProperty="md:w-[10vw]"
+                        handleClick={() => handleClick(".docx")}
+                      />
+                    </DrawerClose>
+                  </div>
+                  <DrawerClose></DrawerClose>
+                </DrawerDescription>
+              </DrawerContent>
+            </Drawer>
+
             <a href="#about">
               <MagicButton
                 widthProperty="w-full"
