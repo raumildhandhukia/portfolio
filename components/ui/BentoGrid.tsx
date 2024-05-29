@@ -65,7 +65,7 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     const text = EMAIL || "";
-    navigator.clipboard.writeText(text);
+    navigator?.clipboard?.writeText(text);
     setCopied(true);
   };
 
@@ -153,7 +153,7 @@ export const BentoGridItem = ({
                 position="left"
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31]"
-                widthProperty="w-max"
+                widthProperty="w-max md:w-full"
               />
             </div>
           )}
