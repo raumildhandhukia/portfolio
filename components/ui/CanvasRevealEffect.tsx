@@ -185,6 +185,7 @@ const ShaderMaterial = ({
   source,
   uniforms,
   maxFps = 60,
+  hovered = true,
 }: {
   source: string;
   hovered?: boolean;

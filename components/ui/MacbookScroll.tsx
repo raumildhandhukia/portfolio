@@ -28,6 +28,7 @@ import ReactGA from "react-ga4";
 import { TextGenerateEffect } from "./TextGenerateEffect";
 import MatrixRain from "./MatrixRain";
 import { Typewriter } from "react-simple-typewriter";
+import { FlipWords } from "./FlipWords";
 export const MacbookScroll = ({
   analyze,
   src,
@@ -712,18 +713,18 @@ const MacbookHeading = ({ isVisible }: { isVisible: boolean }) => {
   return (
     <div>
       {isVisible ? (
-        <div className="text-red-500 font-bold text-4xl">
-          <Typewriter
+        <div className="font-bold text-purple text-4xl transition-all">
+          My
+          <FlipWords
+            duration={750}
             words={[
-              "My Tech Stack",
-              "My Arsenal",
-              "My Tools",
-              "My Skills",
-              "My Stack",
-              "My Tech",
+              " Tech Stack",
+              " Arsenal",
+              " Tools",
+              " Skills",
+              " Stack",
+              " Tech",
             ]}
-            loop={true}
-            cursor={true}
           />
         </div>
       ) : null}
