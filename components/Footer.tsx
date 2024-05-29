@@ -1,29 +1,99 @@
+"use client";
 const PHONE = process.env.NEXT_PUBLIC_PHONE;
 const EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 
-import { FaLocationArrow } from "react-icons/fa6";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { SiGmail } from "react-icons/si";
 import { GoCopy } from "react-icons/go";
 import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
 import Image from "next/image";
 import Link from "next/link";
 import ReactGA from "react-ga4";
 import { Typewriter } from "react-simple-typewriter";
+import MagicButton from "./MagicButton";
+import { FaLocationArrow } from "react-icons/fa6";
+import { Button } from "@/components/ui/button";
+import { BeatLoader } from "react-spinners";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "./ui/textarea";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { sendMessage } from "@/actions/sendMessage";
 
 const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
+  const [open, setOpen] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    message: "",
+  });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleInputChange = (e: any) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  };
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setSending(true);
+
+    // Validation
+    if (
+      !formData.email ||
+      !formData.message ||
+      !formData.firstname ||
+      !formData.lastname
+    ) {
+      setErrorMessage("All fields are required to send message.");
+      return;
+    }
+
+    // Reset error message
+    setErrorMessage("");
+
+    // Send message
+    try {
+      await fetch("/api/sendMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      setOpen(false);
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        message: "",
+      });
+      setSending(false);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
-      {/* background grid */}
-      {/* <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
-      </div> */}
-
       <div className="flex flex-col items-center">
         <div className="flex flex-col">
           <h1 className="heading lg:max-w-[45vw]">
@@ -80,14 +150,98 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href={`mailto:${EMAIL}`} className="mt-5 md:mt-0">
+        {/* <a href={`mailto:${EMAIL}`} className="mt-5 md:mt-0">
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
             widthProperty="w-full"
           />
-        </a>
+        </a> */}
+        <button
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
+          <MagicButton
+            title="Send me a message"
+            icon={<FaLocationArrow />}
+            position="right"
+            widthProperty="w-full"
+          />
+        </button>
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className="w-[80%] md:w-max">
+            <div className="">
+              <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+                Send me a message
+              </h2>
+
+              <form className="my-8" onSubmit={handleSubmit}>
+                {errorMessage && (
+                  <div className="mb-4 text-red-500">{errorMessage}</div>
+                )}
+                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+                  <div className="flex flex-col space-y-2 w-full">
+                    <Label htmlFor="firstname">First name</Label>
+                    <Input
+                      id="firstname"
+                      placeholder="Tyler"
+                      type="text"
+                      value={formData.firstname}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-2 w-full">
+                    <Label htmlFor="lastname">Last name</Label>
+                    <Input
+                      id="lastname"
+                      placeholder="Durden"
+                      type="text"
+                      value={formData.lastname}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="mb-4 flex flex-col space-y-2 w-full">
+                  <Label htmlFor="email">Email Address</Label>
+                  <Input
+                    id="email"
+                    placeholder="any@email.com"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="flex flex-col space-y-2 w-full">
+                  <Label htmlFor="message">Type your message</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Say Hi!!! to Raumil"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <button
+                  className="mt-3 bg-gradient-to-br relative group/btn from-black dark:from-purple dark:to-indigo-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                  type="submit"
+                >
+                  Send &rarr;
+                  <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+                  <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+                </button>
+
+                <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-5 h-[1px] w-full" />
+                {sending ? (
+                  <div className="flex justify-center w-full">
+                    <BeatLoader color="#36d7b7" />
+                  </div>
+                ) : null}
+              </form>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
       <div className="flex md:mt-16 flex-col md:flex-row justify-between items-center gap-10">
         <p className="md:text-base text-sm md:font-normal font-light order-2 md:order-1">
