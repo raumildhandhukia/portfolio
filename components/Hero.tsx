@@ -4,7 +4,7 @@ import { MdDownload } from "react-icons/md";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const RESUME_PATH = "/resume/Raumil_Resume.pdf";
 

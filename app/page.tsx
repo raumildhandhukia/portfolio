@@ -10,14 +10,18 @@ import Macbook from "@/components/Macbook";
 import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID || "";
 ReactGA.initialize(MEASUREMENT_ID);
 
 const Home = () => {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: "View",
+    });
   }, []);
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip">

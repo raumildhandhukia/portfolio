@@ -5,7 +5,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import Link from "next/link";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const RecentProjects = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (

@@ -24,7 +24,7 @@ import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { TextGenerateEffect } from "./TextGenerateEffect";
 import MatrixRain from "./MatrixRain";
 import { Typewriter } from "react-simple-typewriter";

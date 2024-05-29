@@ -1,6 +1,6 @@
 import React from "react";
 import { MacbookScroll } from "./ui/MacbookScroll";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const Macbook = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (

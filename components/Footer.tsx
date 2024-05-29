@@ -9,7 +9,7 @@ import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
 import Link from "next/link";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { Typewriter } from "react-simple-typewriter";
 
 const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
