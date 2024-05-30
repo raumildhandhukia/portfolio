@@ -31,7 +31,7 @@ const Approach = () => {
           icon={<AceternityIcon order="Phase 2" />}
           des="Once we agree on the plan, I'll dive into
           coding. From prototype to polished code, I'll keep you updated
-          every step of the way."
+          at every step of the way."
         >
           <CanvasRevealEffect
             animationSpeed={3}

@@ -94,7 +94,7 @@ export const MacbookScroll = ({
             // opacity: textOpacity,
           }
         }
-        className="dark:text-white text-neutral-800 text-2xl font-bold mb-20 text-center"
+        className="mt-10 dark:text-white text-neutral-800 text-2xl font-bold mb-20 text-center"
       >
         {title || (
           <span className="text-purple">
