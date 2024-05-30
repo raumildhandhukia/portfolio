@@ -186,7 +186,7 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
                     <Label htmlFor="firstname">First name</Label>
                     <Input
                       id="firstname"
-                      placeholder="Tyler"
+                      placeholder="Your First Name"
                       type="text"
                       value={formData.firstname}
                       onChange={handleInputChange}
@@ -196,7 +196,7 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
                     <Label htmlFor="lastname">Last name</Label>
                     <Input
                       id="lastname"
-                      placeholder="Durden"
+                      placeholder="Your Last Name"
                       type="text"
                       value={formData.lastname}
                       onChange={handleInputChange}
@@ -207,7 +207,7 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
                   <Label htmlFor="email">Email Address</Label>
                   <Input
                     id="email"
-                    placeholder="any@email.com"
+                    placeholder="Your Email Address"
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
@@ -217,7 +217,7 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
                   <Label htmlFor="message">Type your message</Label>
                   <Textarea
                     id="message"
-                    placeholder="Say Hi!!! to Raumil"
+                    placeholder="Please type your message here"
                     value={formData.message}
                     onChange={handleInputChange}
                   />

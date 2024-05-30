@@ -1,13 +1,21 @@
 import { gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import { SparklesCore } from "./ui/Sparkles";
+import { IoCopyOutline } from "react-icons/io5";
 import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "./ui/WobbleCard";
 import GridGlobe from "./ui/GridGlobe";
-
+import MagicButton from "./MagicButton";
+const EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 export function WobbleCards() {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    const text = EMAIL || "";
+    navigator?.clipboard?.writeText(text);
+    setCopied(true);
+  };
   return (
     <div className="py-14 px-4 md:py-20 md:px-20 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
       <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[400px] lg:min-h-[600px] xl:min-h-[300px]">
@@ -52,6 +60,20 @@ export function WobbleCards() {
           alt="linear demo image"
           className="absolute -right-64 lg:-right-[40%] grayscale filter -bottom-1 object-contain rounded-2xl"
         />
+
+        <div className="invisible md:visible w-[50%] absolute mt-3 bottom-3">
+          <h2 className="absolute top-1 text-lg font-semibold text-zinc-300">
+            Want to collaborate on a project ?
+          </h2>
+          <MagicButton
+            title={copied ? "Email is Copied!" : "Copy my email address"}
+            icon={<IoCopyOutline />}
+            position="left"
+            handleClick={handleCopy}
+            otherClasses="!bg-black-100"
+            widthProperty="w-[90%] md:w-full"
+          />
+        </div>
       </WobbleCard>
       <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black-100">
         <p className="mt-4 max-w-[20rem] md:max-w-[30rem] text-left text-xl/6 md:text-lg/6 text-neutral-200 font-bold">
