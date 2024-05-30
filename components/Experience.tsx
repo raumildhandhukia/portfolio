@@ -1,52 +1,165 @@
-import React from "react";
+export const workExperience = [
+  {
+    id: 1,
+    title: "Software Engineer - Setu Consulting Services Pvt. Ltd.",
+    desc: [
+      "• Achieved a 30% cost reduction by incorporating Google Maps into the Fleet Management System with React. • Revamped HR processes for improved leave management in existing CRM utilizing React and Node.js. • Secured 60% customer retention by strategizing RMF Analysis (data-driven classification) operating on PostgreSQL stored procedures. Set up personalized marketing email system with Python, JavaScript. • Integrated marketplaces for product updates and financial tracking aided by Webhooks and REST APIs. • Created real-time CRM dashboard wielding WebSockets for dynamic, interactive data updates.",
+    ],
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: "/exp1.svg",
+  },
 
-import { workExperience } from "@/data";
-import { Button } from "./ui/MovingBorders";
+  {
+    id: 0,
+    title: "Developer Intern - Emipro Technologies Pvt. Ltd.",
+    desc: [
+      "• Composed Stored Procedures in PostgreSQL for predictive cash flow by analyzing historical financial data. • Improved scheduler performance to 3 seconds by converting Python logic to Stored Procedures.",
+    ],
+    className: "md:col-span-2", // change to md:col-span-2
+    thumbnail: "/exp4.svg",
+  },
+  {
+    id: 2,
+    title: "Technology Consultant - Arizona State University",
+    desc: [
+      "• Implementing the latest technological advancements and solutions. • Analyzing and improving the performance of web-based portals. Resolving logged errors, as well as ensuring system security and encryption.",
+    ],
+    className: "md:col-span-2",
+    thumbnail: "/exp2.svg",
+  },
+];
+
+import React, { useEffect, useState } from "react";
+
+import Image from "next/image";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
+function CustomizedTimeline() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 932) {
+      setIsMobile(true);
+    }
+  }, []);
+
+  const TimeLineContent = () => (
+    <>
+      <VerticalTimeline>
+        <VerticalTimelineElement
+          visible={true}
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
+          date="May 2023 - May 2024"
+          iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
+          icon={
+            <Image
+              alt="asu"
+              src={"/asu.png"}
+              width={50}
+              height={60}
+              className="mt-4 ml-1"
+            />
+          }
+        >
+          <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
+            Technology Consultant
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Arizona State University
+          </h4>
+          <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4>
+          <TextGenerateEffect
+            isExperience={true}
+            input={workExperience[2].desc}
+          />
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          visible={true}
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
+          date="May 2022 - July 2023"
+          iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
+          icon={
+            <Image
+              alt="setu"
+              src={"/setu.png"}
+              width={50}
+              height={60}
+              className="mt-[7px] ml-[5px]"
+            />
+          }
+        >
+          <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
+            Software Engineer
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Setu Consulting Services Pvt. Ltd.
+          </h4>
+          <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
+          <TextGenerateEffect
+            isExperience={true}
+            input={workExperience[0].desc}
+          />
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          visible={true}
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
+          date="Jan 2021 - April 2021"
+          iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
+          icon={
+            <Image
+              alt="emipro"
+              src={"/emipro.png"}
+              width={60}
+              height={20}
+              className="mt-5"
+            />
+          }
+        >
+          <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
+            Developer Intern
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Emipro Technologies Pvt. Ltd.
+          </h4>
+
+          <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
+          <TextGenerateEffect
+            isExperience={true}
+            input={workExperience[1].desc}
+          />
+        </VerticalTimelineElement>
+      </VerticalTimeline>
+    </>
+  );
+
+  return (
+    <div className="">
+      <TimeLineContent />
+    </div>
+  );
+}
 
 const Experience = () => {
   return (
-    <div className="py-20 w-full">
+    <div className="w-full">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
       </h1>
-
-      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map((card) => (
-          <Button
-            key={card.id}
-            //   random duration will be fun , I think , may be not
-            duration={Math.floor(Math.random() * 10000) + 10000}
-            borderRadius="1.75rem"
-            style={{
-              //   add these two
-              //   you can generate the color from here https://cssgradient.io/
-              background: "rgb(4,7,29)",
-              backgroundColor:
-                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-              // add this border radius to make it more rounded so that the moving border is more realistic
-              borderRadius: `calc(1.75rem* 0.96)`,
-            }}
-            // remove bg-white dark:bg-slate-900
-            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-          >
-            <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-              <img
-                src={card.thumbnail}
-                alt={card.thumbnail}
-                className="lg:w-32 md:w-20 w-16"
-              />
-              <div className="lg:ms-5">
-                <h1 className="text-start text-xl md:text-2xl font-bold">
-                  {card.title}
-                </h1>
-                <p className="text-start text-white-100 mt-3 font-semibold">
-                  {card.desc}
-                </p>
-              </div>
-            </div>
-          </Button>
-        ))}
+      <div className="mt-20">
+        <CustomizedTimeline />
       </div>
+      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10"></div>
     </div>
   );
 };

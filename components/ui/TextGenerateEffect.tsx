@@ -4,14 +4,16 @@ import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
-  words,
+  isExperience,
+  input,
   className,
 }: {
-  words: string;
+  isExperience: boolean;
+  input: string[];
   className?: string;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  let wordsArray = input[0].split(" ");
   useEffect(() => {
     animate(
       "span",
@@ -28,27 +30,39 @@ export const TextGenerateEffect = ({
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              // change here if idx is greater than 3, change the text color to #CBACF9
-              className={` ${
-                idx === 0
-                  ? "text-blue-200"
-                  : idx === 1
-                  ? "text-blue-300"
-                  : idx > 1 && idx < 4
-                  ? "text-red-400"
-                  : idx > 3
-                  ? "text-purple"
-                  : "dark:text-white text-black"
-              } opacity-0`}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
+        {!isExperience
+          ? wordsArray.map((word, idx) => {
+              return (
+                <motion.span
+                  key={word + idx}
+                  // change here if idx is greater than 3, change the text color to #CBACF9
+                  className={` ${
+                    idx === 0
+                      ? "text-blue-200"
+                      : idx === 1
+                      ? "text-blue-300"
+                      : idx > 1 && idx < 4
+                      ? "text-red-400"
+                      : idx > 3
+                      ? "text-purple"
+                      : "dark:text-white text-black"
+                  } opacity-0`}
+                >
+                  {word}{" "}
+                </motion.span>
+              );
+            })
+          : wordsArray.map((word, idx) => {
+              return (
+                <motion.span
+                  key={word + idx}
+                  className="opacity-0 dark:text-white text-black"
+                >
+                  {word === "•" ? <br /> : null}
+                  {word}{" "}
+                </motion.span>
+              );
+            })}
       </motion.div>
     );
   };

@@ -29,8 +29,8 @@ const Home = () => {
         <FloatingNav navItems={navItems} />
         <Hero analyze={ReactGA} />
         <Grid />
-        <RecentProjects analyze={ReactGA} />
         <Experience />
+        <RecentProjects analyze={ReactGA} />
         <Approach />
         <Macbook analyze={ReactGA} />
         <Footer analyze={ReactGA} />

@@ -74,7 +74,10 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
             Transforming Real Life Problems into Digital Solutions
           </p>
           <TextGenerateEffect
-            words="Hi! I'm Raumil Dhandhukia, a Full Stack Developer based in United States"
+            isExperience={false}
+            input={[
+              "Hi! I'm Raumil Dhandhukia, a Full Stack Developer based in United States",
+            ]}
             className="text-center text-[40px] md:text-4xl lg:text-6xl"
           />
           <div className="flex flex-col md:flex-row gap-5">
