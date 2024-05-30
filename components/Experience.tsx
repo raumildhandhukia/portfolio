@@ -28,6 +28,156 @@ export const workExperience = [
     thumbnail: "/exp2.svg",
   },
 ];
+const ClassEffectForASU = [
+  { word: "•", className: "" },
+  { word: "Implementing", className: "" },
+  { word: "the", className: "" },
+  { word: "latest", className: "" },
+  { word: "technological", className: "" },
+  { word: "advancements", className: "" },
+  { word: "and", className: "" },
+  { word: "solutions.", className: "" },
+  { word: "•", className: "" },
+  { word: "Analyzing", className: "" },
+  { word: "and", className: "" },
+  { word: "improving", className: "" },
+  { word: "the", className: "" },
+  { word: "performance", className: "" },
+  { word: "of", className: "" },
+  { word: "web-based", className: "" },
+  { word: "portals.", className: "" },
+  { word: "Resolving", className: "" },
+  { word: "logged", className: "" },
+  { word: "errors,", className: "" },
+  { word: "as", className: "" },
+  { word: "well", className: "" },
+  { word: "as", className: "" },
+  { word: "ensuring", className: "" },
+  { word: "system", className: "" },
+  { word: "security", className: "" },
+  { word: "and", className: "" },
+  { word: "encryption.", className: "" },
+];
+
+const ClassEffectForEmipro = [
+  { word: "•", className: "" },
+  { word: "Composed", className: "" },
+  { word: "Stored", className: "" },
+  { word: "Procedures", className: "" },
+  { word: "in", className: "" },
+  { word: "PostgreSQL", className: "text-red-400" },
+  { word: "for", className: "" },
+  { word: "predictive", className: "" },
+  { word: "cash", className: "" },
+  { word: "flow", className: "" },
+  { word: "by", className: "" },
+  { word: "analyzing", className: "" },
+  { word: "historical", className: "" },
+  { word: "financial", className: "" },
+  { word: "data.", className: "" },
+  { word: "•", className: "" },
+  { word: "Improved", className: "" },
+  { word: "scheduler", className: "" },
+  { word: "performance", className: "" },
+  { word: "to", className: "" },
+  { word: "3", className: "" },
+  { word: "seconds", className: "" },
+  { word: "by", className: "" },
+  { word: "converting", className: "" },
+  { word: "Python", className: "text-red-400" },
+  { word: "logic", className: "" },
+  { word: "to", className: "" },
+  { word: "Stored", className: "" },
+  { word: "Procedures.", className: "" },
+];
+
+const ClassEffectForSetu = [
+  { word: "•", className: "" },
+  { word: "Achieved", className: "" },
+  { word: "a", className: "" },
+  { word: "30%", className: "" },
+  { word: "cost", className: "" },
+  { word: "reduction", className: "" },
+  { word: "by", className: "" },
+  { word: "incorporating", className: "" },
+  { word: "Google", className: "" },
+  { word: "Maps", className: "" },
+  { word: "into", className: "" },
+  { word: "the", className: "" },
+  { word: "Fleet", className: "" },
+  { word: "Management", className: "" },
+  { word: "System", className: "" },
+  { word: "with", className: "" },
+  { word: "React.", className: "text-red-400" },
+  { word: "•", className: "" },
+  { word: "Revamped", className: "" },
+  { word: "HR", className: "" },
+  { word: "processes", className: "" },
+  { word: "for", className: "" },
+  { word: "improved", className: "" },
+  { word: "leave", className: "" },
+  { word: "management", className: "" },
+  { word: "in", className: "" },
+  { word: "existing", className: "" },
+  { word: "CRM", className: "" },
+  { word: "utilizing", className: "" },
+  { word: "React", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "Node.js.", className: "text-red-400" },
+  { word: "•", className: "" },
+  { word: "Secured", className: "" },
+  { word: "60%", className: "" },
+  { word: "customer", className: "" },
+  { word: "retention", className: "" },
+  { word: "by", className: "" },
+  { word: "strategizing", className: "" },
+  { word: "RMF", className: "" },
+  { word: "Analysis", className: "" },
+  { word: "(data-driven", className: "" },
+  { word: "classification)", className: "" },
+  { word: "operating", className: "" },
+  { word: "on", className: "" },
+  { word: "PostgreSQL", className: "text-red-400" },
+  { word: "stored", className: "" },
+  { word: "procedures.", className: "" },
+  { word: "Set", className: "" },
+  { word: "up", className: "" },
+  { word: "personalized", className: "" },
+  { word: "marketing", className: "" },
+  { word: "email", className: "" },
+  { word: "system", className: "" },
+  { word: "with", className: "" },
+  { word: "Python", className: "text-red-400" },
+  { word: ",", className: "" },
+  { word: " JavaScript.", className: "text-red-400" },
+  { word: "•", className: "" },
+  { word: "Integrated", className: "" },
+  { word: "marketplaces", className: "" },
+  { word: "for", className: "" },
+  { word: "product", className: "" },
+  { word: "updates", className: "" },
+  { word: "and", className: "" },
+  { word: "financial", className: "" },
+  { word: "tracking", className: "" },
+  { word: "aided", className: "" },
+  { word: "by", className: "" },
+  { word: "Webhooks", className: "" },
+  { word: "and", className: "" },
+  { word: "REST", className: "" },
+  { word: "APIs.", className: "" },
+  { word: "•", className: "" },
+  { word: "Created", className: "" },
+  { word: "real-time", className: "" },
+  { word: "CRM", className: "" },
+  { word: "dashboard", className: "" },
+  { word: "wielding", className: "" },
+  { word: "WebSockets", className: "" },
+  { word: "for", className: "" },
+  { word: "dynamic,", className: "" },
+  { word: "interactive", className: "" },
+  { word: "data", className: "" },
+  { word: "updates.", className: "" },
+];
 
 import React, { useEffect, useState } from "react";
 
@@ -49,7 +199,7 @@ function CustomizedTimeline() {
 
   const TimeLineContent = () => (
     <>
-      <VerticalTimeline>
+      <VerticalTimeline animate={true}>
         <VerticalTimelineElement
           visible={true}
           className="vertical-timeline-element--work"
@@ -63,7 +213,7 @@ function CustomizedTimeline() {
               src={"/asu.png"}
               width={50}
               height={60}
-              className="mt-4 ml-1"
+              className="mt-[10px] md:mt-4 md:ml-1"
             />
           }
         >
@@ -76,7 +226,7 @@ function CustomizedTimeline() {
           <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4>
           <TextGenerateEffect
             isExperience={true}
-            input={workExperience[2].desc}
+            inputArray={ClassEffectForASU}
           />
         </VerticalTimelineElement>
 
@@ -93,7 +243,7 @@ function CustomizedTimeline() {
               src={"/setu.png"}
               width={50}
               height={60}
-              className="mt-[7px] ml-[5px]"
+              className="mt-[2px] md:mt-[7px] md:ml-[5px]"
             />
           }
         >
@@ -106,7 +256,7 @@ function CustomizedTimeline() {
           <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
           <TextGenerateEffect
             isExperience={true}
-            input={workExperience[0].desc}
+            inputArray={ClassEffectForSetu}
           />
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -122,7 +272,7 @@ function CustomizedTimeline() {
               src={"/emipro.png"}
               width={60}
               height={20}
-              className="mt-5"
+              className="mt-[15px] md:mt-5"
             />
           }
         >
@@ -136,7 +286,7 @@ function CustomizedTimeline() {
           <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
           <TextGenerateEffect
             isExperience={true}
-            input={workExperience[1].desc}
+            inputArray={ClassEffectForEmipro}
           />
         </VerticalTimelineElement>
       </VerticalTimeline>

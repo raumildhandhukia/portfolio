@@ -6,14 +6,28 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   isExperience,
   input,
+  inputArray,
   className,
 }: {
   isExperience: boolean;
-  input: string[];
+  input?: string[];
+  inputArray?: { word: string; className: string }[];
   className?: string;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = input[0].split(" ");
+  let wordsArray: string[];
+  if (!isExperience) {
+    if (input) {
+      wordsArray = input[0].split(" ");
+    } else {
+      wordsArray = [];
+    }
+  } else {
+    if (!inputArray) {
+      inputArray = [];
+    }
+  }
+
   useEffect(() => {
     animate(
       "span",
@@ -21,8 +35,8 @@ export const TextGenerateEffect = ({
         opacity: 1,
       },
       {
-        duration: 2,
-        delay: stagger(0.2),
+        duration: 1,
+        delay: stagger(0.1),
       }
     );
   }, [scope.current]);
@@ -52,11 +66,13 @@ export const TextGenerateEffect = ({
                 </motion.span>
               );
             })
-          : wordsArray.map((word, idx) => {
+          : inputArray!.map(({ word, className }, idx) => {
               return (
                 <motion.span
                   key={word + idx}
-                  className="opacity-0 dark:text-white text-black"
+                  className={`opacity-0 ${
+                    className ? className : "dark:text-white text-black"
+                  } `}
                 >
                   {word === "•" ? <br /> : null}
                   {word}{" "}
