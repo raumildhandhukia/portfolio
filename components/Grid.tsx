@@ -20,9 +20,10 @@ export function WobbleCards() {
     <div className="py-14 px-4 md:py-20 md:px-20 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
       <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[400px] lg:min-h-[600px] xl:min-h-[300px]">
         <div className="">
-          <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.0015em] text-white">
-            I am an experienced Full Stack Developer, Web Developer, and API
-            developer.
+          <h2 className="md:max-w-[75%] text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.0015em] text-white">
+            Full Stack Developer with extensive experience in Web Development
+            and API Development, committed to delivering efficient and scalable
+            solutions.
           </h2>
           <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
             With professional expertise in Next.js, React, Node.js, TypeScript
@@ -48,8 +49,8 @@ export function WobbleCards() {
             applications.
           </h2>
           <p className="mt-4 max-w-[15rem] md:max-w-[30rem] text-left text-base/6 text-neutral-200">
-            I quickly adapt to new challenges and work hand-in-hand with clients
-            to develop efficient, scalable, and intuitive solutions that address
+            Adaptive to new challenges and working hand-in-hand with clients to
+            develop efficient, scalable, and intuitive solutions that address
             real-world needs.
           </p>
         </div>
@@ -77,8 +78,7 @@ export function WobbleCards() {
       </WobbleCard>
       <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black-100">
         <p className="mt-4 max-w-[20rem] md:max-w-[30rem] text-left text-xl/6 md:text-lg/6 text-neutral-200 font-bold">
-          I am versatile, and I am flexible with different time zone
-          communications.
+          Versatile and flexible with different time zone communications.
         </p>
 
         <GridGlobe />

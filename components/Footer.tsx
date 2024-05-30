@@ -147,8 +147,8 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
         </div>
 
         <p className="text-white-200 mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          Feel free to contact me today to discuss how I can assist in achieving
+          your goals.
         </p>
         {/* <a href={`mailto:${EMAIL}`} className="mt-5 md:mt-0">
           <MagicButton
