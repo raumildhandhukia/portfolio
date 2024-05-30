@@ -12,7 +12,7 @@ const RecentProjects = ({ analyze }: { analyze: typeof ReactGA }) => {
     <div className="py-5" id="projects">
       <h1 className="heading">
         <span className="text-white">
-          My <span className="text-purple">projects</span>
+          My <span className="text-purple">Projects</span>
         </span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">

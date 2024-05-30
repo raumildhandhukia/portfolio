@@ -36,7 +36,10 @@ const ClassEffectForASU = [
   { word: "technological", className: "" },
   { word: "advancements", className: "" },
   { word: "and", className: "" },
-  { word: "solutions.", className: "" },
+  { word: "solutions", className: "" },
+  { word: "in", className: "" },
+  { word: "university", className: "" },
+  { word: "buildings.", className: "" },
   { word: "•", className: "" },
   { word: "Analyzing", className: "" },
   { word: "and", className: "" },
@@ -62,8 +65,8 @@ const ClassEffectForASU = [
 const ClassEffectForEmipro = [
   { word: "•", className: "" },
   { word: "Composed", className: "" },
-  { word: "Stored", className: "" },
-  { word: "Procedures", className: "" },
+  { word: "Stored", className: "text-xl text-purple" },
+  { word: "Procedures", className: "text-xl text-purple" },
   { word: "in", className: "" },
   { word: "PostgreSQL", className: "text-red-400" },
   { word: "for", className: "" },
@@ -71,33 +74,33 @@ const ClassEffectForEmipro = [
   { word: "cash", className: "" },
   { word: "flow", className: "" },
   { word: "by", className: "" },
-  { word: "analyzing", className: "" },
-  { word: "historical", className: "" },
-  { word: "financial", className: "" },
+  { word: "analyzing", className: "text-xl text-purple" },
+  { word: "historical", className: "text-xl text-purple" },
+  { word: "financial", className: "text-xl text-purple" },
   { word: "data.", className: "" },
   { word: "•", className: "" },
-  { word: "Improved", className: "" },
-  { word: "scheduler", className: "" },
-  { word: "performance", className: "" },
-  { word: "to", className: "" },
-  { word: "3", className: "" },
-  { word: "seconds", className: "" },
+  { word: "Improved", className: "text-xl text-purple" },
+  { word: "scheduler", className: "text-xl text-purple" },
+  { word: "performance", className: "text-xl text-purple" },
+  { word: "to", className: "text-xl text-purple" },
+  { word: "3", className: "text-xl text-purple" },
+  { word: "seconds", className: "text-xl text-purple" },
   { word: "by", className: "" },
   { word: "converting", className: "" },
   { word: "Python", className: "text-red-400" },
   { word: "logic", className: "" },
   { word: "to", className: "" },
-  { word: "Stored", className: "" },
-  { word: "Procedures.", className: "" },
+  { word: "Stored", className: "text-xl text-purple" },
+  { word: "Procedures.", className: "text-xl text-purple" },
 ];
 
 const ClassEffectForSetu = [
   { word: "•", className: "" },
   { word: "Achieved", className: "" },
   { word: "a", className: "" },
-  { word: "30%", className: "" },
-  { word: "cost", className: "" },
-  { word: "reduction", className: "" },
+  { word: "30%", className: "text-xl text-purple" },
+  { word: "cost", className: "text-xl text-purple" },
+  { word: "reduction", className: "text-xl text-purple" },
   { word: "by", className: "" },
   { word: "incorporating", className: "" },
   { word: "Google", className: "" },
@@ -126,9 +129,9 @@ const ClassEffectForSetu = [
   { word: "Node.js.", className: "text-red-400" },
   { word: "•", className: "" },
   { word: "Secured", className: "" },
-  { word: "60%", className: "" },
-  { word: "customer", className: "" },
-  { word: "retention", className: "" },
+  { word: "60%", className: "text-xl text-purple" },
+  { word: "customer", className: "text-xl text-purple" },
+  { word: "retention", className: "text-xl text-purple" },
   { word: "by", className: "" },
   { word: "strategizing", className: "" },
   { word: "RMF", className: "" },
@@ -142,39 +145,39 @@ const ClassEffectForSetu = [
   { word: "procedures.", className: "" },
   { word: "Set", className: "" },
   { word: "up", className: "" },
-  { word: "personalized", className: "" },
-  { word: "marketing", className: "" },
-  { word: "email", className: "" },
-  { word: "system", className: "" },
+  { word: "personalized", className: "text-xl text-purple" },
+  { word: "marketing", className: "text-xl text-purple" },
+  { word: "email", className: "text-xl text-purple" },
+  { word: "system", className: "text-xl text-purple" },
   { word: "with", className: "" },
   { word: "Python", className: "text-red-400" },
   { word: ",", className: "" },
   { word: " JavaScript.", className: "text-red-400" },
   { word: "•", className: "" },
-  { word: "Integrated", className: "" },
-  { word: "marketplaces", className: "" },
+  { word: "Integrated", className: "text-xl text-purple" },
+  { word: "marketplaces", className: "text-xl text-purple" },
   { word: "for", className: "" },
   { word: "product", className: "" },
   { word: "updates", className: "" },
   { word: "and", className: "" },
   { word: "financial", className: "" },
-  { word: "tracking", className: "" },
-  { word: "aided", className: "" },
-  { word: "by", className: "" },
-  { word: "Webhooks", className: "" },
+  { word: "tracking,", className: "" },
+  { word: "synchronized", className: "text-xl text-purple" },
+  { word: "through", className: "" },
+  { word: "Webhooks", className: "text-red-400" },
   { word: "and", className: "" },
-  { word: "REST", className: "" },
-  { word: "APIs.", className: "" },
+  { word: "REST", className: "text-red-400" },
+  { word: "APIs.", className: "text-red-400" },
   { word: "•", className: "" },
   { word: "Created", className: "" },
   { word: "real-time", className: "" },
-  { word: "CRM", className: "" },
-  { word: "dashboard", className: "" },
+  { word: "CRM", className: "text-xl text-purple" },
+  { word: "dashboard", className: "text-xl text-purple" },
   { word: "wielding", className: "" },
-  { word: "WebSockets", className: "" },
+  { word: "WebSockets", className: "text-red-400" },
   { word: "for", className: "" },
-  { word: "dynamic,", className: "" },
-  { word: "interactive", className: "" },
+  { word: "dynamic,", className: "text-xl text-purple" },
+  { word: "interactive", className: "text-xl text-purple" },
   { word: "data", className: "" },
   { word: "updates.", className: "" },
 ];
@@ -205,37 +208,7 @@ function CustomizedTimeline() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
-          date="May 2023 - May 2024"
-          iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
-          icon={
-            <Image
-              alt="asu"
-              src={"/asu.png"}
-              width={50}
-              height={60}
-              className="mt-[10px] md:mt-4 md:ml-1"
-            />
-          }
-        >
-          <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
-            Technology Consultant
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Arizona State University
-          </h4>
-          <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4>
-          <TextGenerateEffect
-            isExperience={true}
-            inputArray={ClassEffectForASU}
-          />
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          visible={true}
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
-          date="May 2022 - July 2023"
+          date=""
           iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
           icon={
             <Image
@@ -258,13 +231,16 @@ function CustomizedTimeline() {
             isExperience={true}
             inputArray={ClassEffectForSetu}
           />
+          <h3 className="text-lg font-bold text-purple">
+            May 2022 - July 2023
+          </h3>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           visible={true}
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
-          date="Jan 2021 - April 2021"
+          date=""
           iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
           icon={
             <Image
@@ -288,6 +264,39 @@ function CustomizedTimeline() {
             isExperience={true}
             inputArray={ClassEffectForEmipro}
           />
+          <h3 className="text-lg font-bold text-purple">
+            Jan 2021 - April 2021
+          </h3>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          visible={true}
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
+          date=""
+          iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
+          icon={
+            <Image
+              alt="asu"
+              src={"/asu.png"}
+              width={50}
+              height={60}
+              className="mt-[10px] md:mt-4 md:ml-1"
+            />
+          }
+        >
+          <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
+            Technology Consultant
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Arizona State University
+          </h4>
+          <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4>
+          <TextGenerateEffect
+            isExperience={true}
+            inputArray={ClassEffectForASU}
+          />
+          <h3 className="text-lg font-bold text-purple">May 2023 - May 2024</h3>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </>
@@ -304,7 +313,7 @@ const Experience = () => {
   return (
     <div className="w-full">
       <h1 className="heading">
-        My <span className="text-purple">work experience</span>
+        My <span className="text-purple">Work Experience</span>
       </h1>
       <div className="mt-20">
         <CustomizedTimeline />

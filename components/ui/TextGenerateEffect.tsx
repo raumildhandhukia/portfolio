@@ -74,7 +74,11 @@ export const TextGenerateEffect = ({
                     className ? className : "dark:text-white text-black"
                   } `}
                 >
-                  {word === "•" ? <br /> : null}
+                  {word === "•" ? (
+                    <div className="mt-2">
+                      <br />
+                    </div>
+                  ) : null}
                   {word}{" "}
                 </motion.span>
               );
