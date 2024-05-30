@@ -26,7 +26,7 @@ export function WobbleCards() {
           </h2>
           <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
             With professional expertise in Next.js, React, Node.js, TypeScript
-            and database not limited to MongoDB, MySQL, and PostgreSQL.
+            and databases not limited to MongoDB, MySQL, and PostgreSQL.
           </p>
         </div>
         <Image
