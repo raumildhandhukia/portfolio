@@ -6,15 +6,17 @@ import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import Link from "next/link";
 import ReactGA from "react-ga4";
+import { SparklesCore } from "./ui/Sparkles";
 
 const RecentProjects = ({ analyze }: { analyze: typeof ReactGA }) => {
   return (
-    <div className="py-5" id="projects">
+    <div className="py-5 flex flex-col items-center" id="projects">
       <h1 className="heading">
         <span className="text-white">
           My <span className="text-purple">Projects</span>
         </span>
       </h1>
+
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div

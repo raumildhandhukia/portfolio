@@ -183,7 +183,7 @@ const ClassEffectForSetu = [
 ];
 
 import React, { useEffect, useState } from "react";
-
+import { SparklesCore } from "./ui/Sparkles";
 import Image from "next/image";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import {
@@ -311,11 +311,12 @@ function CustomizedTimeline() {
 
 const Experience = () => {
   return (
-    <div className="w-full">
-      <h1 className="heading">
+    <div className="w-full flex flex-col items-center">
+      <h1 className="heading w-[34rem]">
         My <span className="text-purple">Work Experience</span>
       </h1>
-      <div className="mt-20">
+
+      <div className="mt-6">
         <CustomizedTimeline />
       </div>
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10"></div>
