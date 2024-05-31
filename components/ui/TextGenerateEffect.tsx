@@ -8,11 +8,15 @@ export const TextGenerateEffect = ({
   input,
   inputArray,
   className,
+  speed,
+  duration,
 }: {
   isExperience: boolean;
   input?: string[];
   inputArray?: { word: string; className: string }[];
   className?: string;
+  speed?: number;
+  duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray: string[];
@@ -35,8 +39,8 @@ export const TextGenerateEffect = ({
         opacity: 1,
       },
       {
-        duration: 1,
-        delay: stagger(0.1),
+        duration: duration || 2,
+        delay: stagger(speed || 0.2),
       }
     );
   }, [scope.current]);

@@ -228,6 +228,8 @@ function CustomizedTimeline() {
           </h4>
           <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
           <TextGenerateEffect
+            duration={5}
+            speed={0.05}
             isExperience={true}
             inputArray={ClassEffectForSetu}
           />
@@ -261,6 +263,8 @@ function CustomizedTimeline() {
 
           <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
           <TextGenerateEffect
+            speed={0.05}
+            duration={5}
             isExperience={true}
             inputArray={ClassEffectForEmipro}
           />
@@ -293,6 +297,8 @@ function CustomizedTimeline() {
           </h4>
           <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4>
           <TextGenerateEffect
+            speed={0.05}
+            duration={5}
             isExperience={true}
             inputArray={ClassEffectForASU}
           />
