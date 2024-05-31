@@ -9,8 +9,9 @@ import { FloatingNav } from "@/components/ui/FloatingNavbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Raumil's Portfolio",
-  description: "a portfolio website for Raumil Dhandhukia",
+  title: "Raumil Dhandhukia",
+  description:
+    "Full Stack Developer with extensive experience in Web Development and API Development, committed to delivering efficient and scalable solutions.",
   metadataBase: new URL(`${WEBSITELINK}`),
   openGraph: {
     images: "./opengraph-image.jpg",

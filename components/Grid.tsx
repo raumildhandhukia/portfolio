@@ -26,8 +26,8 @@ export function WobbleCards() {
             solutions.
           </h2>
           <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-            With professional expertise in Next.js, React, Node.js, TypeScript
-            and databases not limited to MongoDB, MySQL, and PostgreSQL.
+            With expertise in Next.js, React, Node.js, TypeScript and databases
+            not limited to MongoDB, MySQL, and PostgreSQL.
           </p>
         </div>
         <Image
@@ -97,21 +97,6 @@ const Grid = () => {
           </span>
         </h1>
         <WobbleCards />
-        {/* <BentoGrid className="w-full py-20">
-          {gridItems.map((item, i) => (
-            <BentoGridItem
-              id={item.id}
-              key={i}
-              title={item.title}
-              description={item.description}
-              className={item.className}
-              img={item.img}
-              imgClassName={item.imgClassName}
-              titleClassName={item.titleClassName}
-              spareImg={item.spareImg}
-            />
-          ))}
-        </BentoGrid> */}
       </div>
     </section>
   );
