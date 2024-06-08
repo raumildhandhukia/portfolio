@@ -68,12 +68,12 @@ export function WobbleCards() {
         <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[400px] lg:min-h-[600px] xl:min-h-[300px]">
           <div className="">
             <h2 className="md:max-w-[75%] 2xl:max-w-[70%] text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.0015em] text-white">
-              Full Stack Developer with extensive experience in Web Development
-              and API Development, committed to delivering efficient and
-              scalable solutions.
+              Full Stack Developer / Python Developer with extensive experience
+              in Web Development and API Development, committed to delivering
+              efficient and scalable solutions.
             </h2>
             <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-              With expertise in Next.js, React, Node.js, TypeScript and
+              With expertise in Next.js, React, Python, Node.js, TypeScript and
               databases not limited to MongoDB, MySQL, and PostgreSQL.
             </p>
           </div>
