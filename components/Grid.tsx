@@ -1,6 +1,7 @@
 import { gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import { SparklesCore } from "./ui/Sparkles";
+import { FaLocationArrow } from "react-icons/fa6";
 import { IoCopyOutline } from "react-icons/io5";
 import { use, useEffect, useState } from "react";
 import Image from "next/image";
@@ -62,10 +63,14 @@ export function WobbleCards() {
     navigator?.clipboard?.writeText(text);
     setCopied(true);
   };
+
+  const redirectToProject = () => {
+    window.open("https://inboxradarai.vercel.app/", "_blank");
+  };
   return (
     <>
       <div className="py-14 px-4 md:py-20 md:px-20 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[400px] lg:min-h-[600px] xl:min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[430px] lg:min-h-[600px] xl:min-h-[300px]">
           <div className="">
             <h2 className="md:max-w-[75%] 2xl:max-w-[70%] text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.0015em] text-white">
               Full Stack Developer / Python Developer with extensive experience
@@ -132,22 +137,40 @@ export function WobbleCards() {
         </WobbleCard>
         <WobbleCard
           gradientDirection="bottom"
-          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[250px] lg:min-h-[200px] xl:min-h-[200px]"
+          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[465px] md:min-h-[200px]"
         >
           <h2 className="text-left text-balance">
-            <p className="text-lg sm:text-base md:text-xl lg:text:3xl xl:text-4xl 2xl:text-5xl font-bold tracking-[-0.0015em] text-white">
+            <p className="text-lg sm:text-base md:text-xl lg:text:3xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
               Currently building an{" "}
               <span className="text-blue-400">
                 AI powered Job Application Tracking
               </span>{" "}
-              app supporting Web and iOS devices.
+              <span className="text-red-400">SaaS</span> app supporting Web and
+              iOS devices.
             </p>
           </h2>
-          <p className="mt-4 max-w-[46rem] text-left text-sm md:text-base/6 text-neutral-200">
+          <p className="mt-4 max-w-[36rem] text-left text-sm md:text-base/6 text-neutral-200">
             This application will automatically track job applications by
             analyzing email inbox, tag application status and provide insights
             on job application progress.
           </p>
+          <Image
+            src="/inboxradar.png"
+            width={420}
+            height={420}
+            alt="linear demo image"
+            className={`absolute scale-[0.9] md:scale-[1] -right-[0%] lg:-right-[5%] 2xl:right-[1%] grayscale filter -bottom-8 lg:top-26 2xl:top-40 object-contain rounded-2xl`}
+          />
+          <div className="flex justify-center md:justify-start my-5 md:mt-0">
+            <MagicButton
+              title="Check out live on Vercel"
+              icon={<FaLocationArrow />}
+              position="left"
+              handleClick={redirectToProject}
+              otherClasses="!bg-black-100"
+              widthProperty="md:w-max"
+            />
+          </div>
         </WobbleCard>
       </div>
     </>
