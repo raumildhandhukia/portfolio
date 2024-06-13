@@ -40,6 +40,7 @@ const RecentProjects = ({ analyze }: { analyze: typeof ReactGA }) => {
                   <img src="/bg.png" alt="bgimg" />
                 </div>
                 <Image
+                  unoptimized
                   src={item.img}
                   alt="cover"
                   width={400}

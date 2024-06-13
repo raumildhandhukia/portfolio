@@ -43,6 +43,22 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 0,
+    title: "Inbox Radar AI",
+    des: "AI powered Job Application Tracking SaaS app using Next.js, Tailwind CSS, and TypeScript.",
+    img: "/inboxradar.png",
+    iconLists: [
+      "/next.svg",
+      "/re.svg",
+      "/ts.svg",
+      "/authlogo.png",
+      "/pgsql.svg",
+      "/tail.svg",
+    ],
+    link: "https://inboxradarai.vercel.app/",
+    live: true,
+  },
+  {
     id: 1,
     title: "Portfolio Website",
     des: "Portfolio website built with Next.js, Tailwind CSS, and TypeScript.",
