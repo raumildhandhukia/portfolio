@@ -145,8 +145,7 @@ export function WobbleCards() {
               <span className="text-blue-400">
                 AI SaaS to automate inbox operations
               </span>{" "}
-              <span className="text-red-400">SaaS</span> supporting Web and iOS
-              devices.
+              supporting Web and iOS devices.
             </p>
           </h2>
           <p className="mt-4 max-w-[36rem] text-left text-sm md:text-base/6 text-neutral-200">
