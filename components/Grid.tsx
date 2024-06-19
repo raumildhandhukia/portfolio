@@ -143,19 +143,23 @@ export function WobbleCards() {
             <p className="text-lg sm:text-base md:text-xl lg:text:3xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
               Currently building an{" "}
               <span className="text-blue-400">
-                AI powered Job Application Tracking
+                AI SaaS to automate inbox operations
               </span>{" "}
-              <span className="text-red-400">SaaS</span> app supporting Web and
-              iOS devices.
+              <span className="text-red-400">SaaS</span> supporting Web and iOS
+              devices.
             </p>
           </h2>
           <p className="mt-4 max-w-[36rem] text-left text-sm md:text-base/6 text-neutral-200">
-            This application will automatically track job applications by
-            analyzing email inbox, tag application status and provide insights
-            on job application progress.
+            This application will automate the email labeling, categorization
+            and mass email sending process. Utilizing{" "}
+            <span className="text-red-400">
+              Next.js, React, TypeScript, PostgreSQL, Gmail API
+            </span>{" "}
+            and more. Payments enabled through{" "}
+            <span className="text-red-400">Stripe</span>.
           </p>
           <Image
-            src="/inboxradar.png"
+            src="/inboxradarai.png"
             width={420}
             height={420}
             alt="linear demo image"

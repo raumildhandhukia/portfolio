@@ -45,8 +45,8 @@ export const projects = [
   {
     id: 0,
     title: "Inbox Radar AI",
-    des: "AI powered Job Application Tracking SaaS app using Next.js, Tailwind CSS, and TypeScript.",
-    img: "/inboxradar.png",
+    des: "AI SaaS to automate email operations using Next.js, React, TypeScript, and PostgreSQL.",
+    img: "/inboxradarai.png",
     iconLists: [
       "/next.svg",
       "/re.svg",
