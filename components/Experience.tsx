@@ -242,9 +242,9 @@ function CustomizedTimeline() {
             Software Engineer
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
-            Setu Consulting Services Pvt. Ltd.
+            Setu Consulting Services
           </h4>
-          <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
+          {/* <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4> */}
           <TextGenerateEffect
             duration={5}
             speed={0.05}
@@ -273,13 +273,13 @@ function CustomizedTimeline() {
           }
         >
           <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
-            Developer Intern
+            Software Developer
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
-            Emipro Technologies Pvt. Ltd.
+            Emipro Technologies
           </h4>
 
-          <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4>
+          {/* <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4> */}
           <TextGenerateEffect
             speed={0.05}
             duration={5}
@@ -313,7 +313,7 @@ function CustomizedTimeline() {
           <h4 className="vertical-timeline-element-subtitle">
             Arizona State University
           </h4>
-          <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4>
+          {/* <h4 className="vertical-timeline-element-subtitle">Mesa, AZ</h4> */}
           <TextGenerateEffect
             speed={0.05}
             duration={5}

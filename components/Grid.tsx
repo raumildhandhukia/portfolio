@@ -137,13 +137,13 @@ export function WobbleCards() {
         </WobbleCard>
         <WobbleCard
           gradientDirection="bottom"
-          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[465px] md:min-h-[200px]"
+          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[490px] md:min-h-[200px]"
         >
           <h2 className="text-left text-balance">
             <p className="text-lg sm:text-base md:text-xl lg:text:3xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
               Currently building an{" "}
               <span className="text-blue-400">
-                AI SaaS to automate inbox operations
+                AI-Powered Email Management SaaS
               </span>{" "}
               supporting Web and iOS devices.
             </p>
