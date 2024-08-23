@@ -28,6 +28,108 @@ export const workExperience = [
     thumbnail: "/exp2.svg",
   },
 ];
+const ClassEffectForSync = [
+  { word: "•", className: "" },
+  { word: "Led", className: "text-purple" },
+  { word: "a", className: "" },
+  { word: "cross-functional", className: "text-purple" },
+  { word: "team", className: "text-purple" },
+  { word: "of", className: "" },
+  { word: "8", className: "text-red-400" },
+  { word: "developers,", className: "text-red-400" },
+  { word: "engineered", className: "text-purple" },
+  { word: "the", className: "" },
+  { word: "MVC", className: "text-red-400" },
+  { word: "architecture", className: "text-red-400" },
+  { word: "using", className: "" },
+  { word: "Node.js", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "TypeScript,", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "made", className: "text-purple" },
+  { word: "critical", className: "text-purple" },
+  { word: "architectural", className: "text-purple" },
+  { word: "decisions", className: "text-purple" },
+  { word: "for", className: "" },
+  { word: "tech", className: "text-red-400" },
+  { word: "stack", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "cloud", className: "text-red-400" },
+  { word: "platform,", className: "text-red-400" },
+  { word: "optimizing", className: "text-purple" },
+  { word: "costs", className: "text-purple" },
+  { word: "•", className: "" },
+  { word: "Spearheaded", className: "text-purple" },
+  { word: "the", className: "" },
+  { word: "development", className: "text-purple" },
+  { word: "of", className: "" },
+  { word: "an", className: "" },
+  { word: "inventory", className: "text-purple" },
+  { word: "management", className: "text-purple" },
+  { word: "system,", className: "text-purple" },
+  { word: "maintaining", className: "text-purple" },
+  { word: "120,000+", className: "text-red-400" },
+  { word: "products", className: "text-red-400" },
+  { word: "from", className: "" },
+  { word: "60+", className: "text-red-400" },
+  { word: "websites", className: "text-red-400" },
+  { word: "using", className: "" },
+  { word: "APIs,", className: "text-red-400" },
+  { word: "HTML", className: "text-red-400" },
+  { word: "parsing,", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "AI", className: "text-red-400" },
+  { word: "parsing,", className: "text-red-400" },
+  { word: "all", className: "" },
+  { word: "deployed", className: "text-purple" },
+  { word: "on", className: "" },
+  { word: "AWS", className: "text-red-400" },
+  { word: "EC2,", className: "text-red-400" },
+  { word: "Lambda", className: "text-red-400" },
+  { word: "•", className: "" },
+  { word: "Developed", className: "text-purple" },
+  { word: "50+", className: "text-red-400" },
+  { word: "RESTful", className: "text-red-400" },
+  { word: "API", className: "text-red-400" },
+  { word: "endpoints", className: "text-red-400" },
+  { word: "using", className: "" },
+  { word: "Node.js", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "TypeScript,", className: "text-red-400" },
+  { word: "implemented", className: "text-purple" },
+  { word: "dynamic", className: "text-purple" },
+  { word: "fashion", className: "text-purple" },
+  { word: "recommendations", className: "text-purple" },
+  { word: "utilizing", className: "text-purple" },
+  { word: "OpenAI", className: "text-red-400" },
+  { word: "APIs,", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "designed", className: "text-purple" },
+  { word: "the", className: "" },
+  { word: "PostgreSQL", className: "text-red-400" },
+  { word: "schema", className: "text-red-400" },
+  { word: "with", className: "" },
+  { word: "Prisma", className: "text-red-400" },
+  { word: "ORM", className: "text-red-400" },
+  { word: "•", className: "" },
+  { word: "Implemented", className: "text-purple" },
+  { word: "robust", className: "text-purple" },
+  { word: "authentication", className: "text-purple" },
+  { word: "by", className: "" },
+  { word: "integrating", className: "text-purple" },
+  { word: "Auth.js,", className: "text-red-400" },
+  { word: "OAuth", className: "text-red-400" },
+  { word: "for", className: "" },
+  { word: "third-party", className: "text-red-400" },
+  { word: "authorization,", className: "text-red-400" },
+  { word: "and", className: "" },
+  { word: "JWT", className: "text-red-400" },
+  { word: "for", className: "" },
+  { word: "token-based", className: "text-red-400" },
+  { word: "access", className: "text-red-400" },
+  { word: "control", className: "text-red-400" },
+];
+
 const ClassEffectForASU = [
   { word: "•", className: "" },
   { word: "Implementing", className: "" },
@@ -223,6 +325,38 @@ function CustomizedTimeline() {
       <VerticalTimeline animate={true}>
         <VerticalTimelineElement
           visible={true}
+          className="vertical-timeline-element--work "
+          contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
+          date=""
+          iconStyle={{ background: "rgb(255, 255, 255)", color: "#fff" }}
+          icon={
+            <Image
+              alt="sync-n-style"
+              src={"/sync_n_style_logo.ico"}
+              width={50}
+              height={60}
+              className="mt-[2px] md:mt-[7px] md:ml-[5px] rounded-full"
+            />
+          }
+        >
+          <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
+            Backend Developer
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Sync &apos;N Style
+          </h4>
+          {/* <h4 className="vertical-timeline-element-subtitle">Gujarat, India</h4> */}
+          <TextGenerateEffect
+            duration={5}
+            speed={0.05}
+            isExperience={true}
+            inputArray={ClassEffectForSync}
+          />
+          <h3 className="text-lg font-bold text-purple">July 2024 - Present</h3>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          visible={true}
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgba(33, 33, 33,0.5)" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 33, 33)" }}
@@ -239,7 +373,7 @@ function CustomizedTimeline() {
           }
         >
           <h3 className="vertical-timeline-element-title text-xl font-bold text-purple">
-            Software Engineer
+            Software Developer
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
             Setu Consulting Services
@@ -335,7 +469,7 @@ function CustomizedTimeline() {
 
 const Experience = () => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center" id="workex">
       <h1 className="heading w-[34rem]">
         My <span className="text-purple">Work Experience</span>
       </h1>

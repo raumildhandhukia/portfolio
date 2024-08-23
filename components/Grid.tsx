@@ -97,13 +97,13 @@ export function WobbleCards() {
         >
           <div className="">
             <h2 className="w-[90%] text-left text-balance text-base md:text-xl lg:text-xl font-semibold tracking-[-0.015em] text-white">
-              Together, we can turn your ideas into impactful, user-friendly
-              applications.
+              I love creating and developing applications that solve real-world
+              problems. I am passionate about learning new technologies and
+              frameworks.
             </h2>
             <p className="mt-4 max-w-[15rem] md:max-w-[30rem] text-left text-base/6 text-neutral-200">
-              Adaptive to new challenges and working hand-in-hand with clients
-              to develop efficient, scalable, and intuitive solutions that
-              address real-world needs.
+              Adaptive to new challenges to develop scalable and efficient
+              solutions.
             </p>
           </div>
           <Image
@@ -116,7 +116,7 @@ export function WobbleCards() {
 
           <div className="invisible md:visible w-[50%] absolute mt-3 bottom-3">
             <h2 className="absolute top-1 text-lg font-semibold text-zinc-300">
-              Want to collaborate on a project ?
+              Want to reach out?
             </h2>
             <MagicButton
               title={copied ? "Email is Copied!" : "Copy my email address"}

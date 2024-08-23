@@ -97,7 +97,7 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
       <div className="flex flex-col items-center">
         <div className="flex flex-col">
           <h1 className="heading lg:max-w-[45vw]">
-            <span className="text-purple">Contact Me</span>
+            <span className="text-purple">Hire Me</span>
           </h1>
           <div className="flex justify-between">
             <h3 className="text-white-200 text-lg font-light ml-2"></h3>
@@ -147,8 +147,8 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
         </div>
 
         <p className="text-white-200 mt-10 my-5 text-center">
-          Feel free to contact me today to discuss how I can assist in achieving
-          your goals.
+          I am actively looking for new opportunities and would love to hear
+          from prospective employers.
         </p>
         {/* <a href={`mailto:${EMAIL}`} className="mt-5 md:mt-0">
           <MagicButton

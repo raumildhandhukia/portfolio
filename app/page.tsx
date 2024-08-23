@@ -31,7 +31,7 @@ const Home = () => {
         <Grid />
         <Experience />
         <RecentProjects analyze={ReactGA} />
-        <Approach />
+        {/* <Approach /> */}
         <Macbook analyze={ReactGA} />
         <Footer analyze={ReactGA} />
       </div>

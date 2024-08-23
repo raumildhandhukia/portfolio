@@ -126,7 +126,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
               </DrawerContent>
             </Drawer>
 
-            <a href="#about">
+            <a href="#workex">
               <MagicButton
                 widthProperty="w-full"
                 title="Show my work"
