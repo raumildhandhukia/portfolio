@@ -69,17 +69,17 @@ export function WobbleCards() {
   };
   return (
     <>
-      <div className="py-14 px-4 md:py-20 md:px-20 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[430px] lg:min-h-[600px] xl:min-h-[300px]">
+      <div className="py-14 px-4 md:py-0 md:px-20 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[430px] lg:min-h-[600px] xl:min-h-[300px] bg-pink-700 md:bg-black-100">
           <div className="">
             <h2 className="md:max-w-[75%] 2xl:max-w-[70%] text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.0015em] text-white">
-              Full Stack Developer / Python Developer with extensive experience
-              in Web Development and API Development, committed to delivering
-              efficient and scalable solutions.
+              I am a Software Developer with 3 years of experience and I build
+              scalable and efficient applications.
             </h2>
-            <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-              With expertise in Next.js, React, Python, Node.js, TypeScript and
-              databases not limited to MongoDB, MySQL, and PostgreSQL.
+            <p className="mt-4 max-w-xl text-left  text-base/6 text-neutral-200">
+              Always eager to learn new technologies and frameworks. I have
+              achieved expertise in Next.js, React, Python, Node.js, TypeScript
+              and databases not limited to MongoDB, MySQL, and PostgreSQL.
             </p>
           </div>
           <Image
@@ -87,11 +87,11 @@ export function WobbleCards() {
             width={500}
             height={500}
             alt="linear demo image"
-            className="absolute -right-10 md:-right-[30%] lg:-right-[15%] -bottom-20 object-contain rounded-2xl"
+            className="absolute -right-10 md:-right-[30%] lg:-right-[15%] -bottom-20 md:-bottom-28 object-contain rounded-2xl"
           />
         </WobbleCard>
 
-        <WobbleCard
+        {/* <WobbleCard
           containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-700 md:bg-black-100 min-h-[300px] lg:min-h-[300px]"
           className=""
         >
@@ -127,42 +127,44 @@ export function WobbleCards() {
               widthProperty="w-[90%] md:w-full"
             />
           </div>
-        </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black-100">
+        </WobbleCard>  */}
+        {/* <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black-100">
           <p className="mt-4 max-w-[20rem] md:max-w-[30rem] text-left text-xl/6 md:text-lg/6 text-neutral-200 font-bold">
             Versatile and flexible with different time zone communications.
           </p>
 
           <GridGlobe />
-        </WobbleCard>
+        </WobbleCard> */}
         <WobbleCard
           gradientDirection="bottom"
-          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[490px] md:min-h-[200px]"
+          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[580px] md:min-h-[200px]"
         >
           <h2 className="text-left text-balance">
-            <p className="text-lg sm:text-base md:text-xl lg:text:3xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
-              Currently building an{" "}
+            <p className="text-lg sm:text-base md:text-xl lg:text:xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
+              Recently I built,
+              <br />
               <span className="text-blue-400">
                 AI-Powered Email Management SaaS
               </span>{" "}
-              supporting Web and iOS devices.
+              featuring AI-powered Email Categorizationm, AI-Labeling,
+              AI-Insights and AI Email Writing Assistant with Autocompletion
             </p>
           </h2>
           <p className="mt-4 max-w-[36rem] text-left text-sm md:text-base/6 text-neutral-200">
-            This application will automate the email labeling, categorization
-            and mass email sending process. Utilizing{" "}
+            Completely integrated and synced with Gmail. Built with{" "}
             <span className="text-red-400">
-              Next.js, React, TypeScript, PostgreSQL, Gmail API
-            </span>{" "}
-            and more. Payments enabled through{" "}
-            <span className="text-red-400">Stripe</span>.
+              Next.js, React, TypeScript, Auth.js, Prisma, PostgreSQL, Gmail API
+              and Gemini API
+            </span>
+            . Integrated <span className="text-red-400">Stripe</span> for
+            payment processing.
           </p>
           <Image
-            src="/inboxradarai.png"
+            src="/inboxradarai-up.png"
             width={420}
             height={420}
             alt="linear demo image"
-            className={`absolute scale-[0.9] md:scale-[1] -right-[0%] lg:-right-[5%] 2xl:right-[1%] grayscale filter -bottom-8 lg:top-26 2xl:top-40 object-contain rounded-2xl`}
+            className={`absolute scale-[0.9] md:scale-[1] -right-[0%] lg:-right-[5%] 2xl:-right-[1%] grayscale filter -bottom-8 lg:top-26 2xl:top-60 object-contain rounded-2xl`}
           />
           <div className="flex justify-center md:justify-start my-5 md:mt-0">
             <MagicButton
@@ -185,9 +187,9 @@ const Grid = () => {
     <section id="about">
       <div className="flex flex-col items-center py-20">
         <h1 className="heading">
-          <span className="text-white">
+          {/* <span className="text-white">
             About <span className="text-purple">Me</span>
-          </span>
+          </span> */}
         </h1>
         <WobbleCards />
       </div>

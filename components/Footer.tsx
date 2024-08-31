@@ -93,7 +93,7 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
     return null;
   }
   return (
-    <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
+    <footer className="w-full pb-10 mb-[100px] md:mb-5 mt-10" id="contact">
       <div className="flex flex-col items-center">
         <div className="flex flex-col">
           <h1 className="heading lg:max-w-[45vw]">

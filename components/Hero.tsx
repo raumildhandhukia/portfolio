@@ -96,7 +96,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
                 <DrawerHeader>
                   <div className="flex w-full justify-center mt-2 mb-2 md:-mb-5">
                     <DrawerTitle className="text-purple">
-                      Click on one of the file type to download
+                      Click to download
                     </DrawerTitle>
                   </div>
                 </DrawerHeader>
@@ -111,7 +111,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
                         handleClick={() => handleClick(".pdf")}
                       />
                     </DrawerClose>
-                    <DrawerClose>
+                    {/* <DrawerClose>
                       <MagicButton
                         title="DOCX"
                         icon={<MdDownload />}
@@ -119,7 +119,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
                         widthProperty="md:w-[10vw]"
                         handleClick={() => handleClick(".docx")}
                       />
-                    </DrawerClose>
+                    </DrawerClose> */}
                   </div>
                   <DrawerClose></DrawerClose>
                 </DrawerDescription>

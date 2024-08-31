@@ -87,6 +87,7 @@ export const MacbookScroll = ({
       ref={ref}
       className="flex flex-col items-center md:py-20 2xl:py-80 justify-start flex-shrink-0 [perspective:800px] transform scale-[0.30] md:scale-[0.65] 2xl:scale-100"
     >
+      {/* visit my github heading */}
       <h2
         style={
           {
@@ -105,11 +106,11 @@ export const MacbookScroll = ({
         )}
       </h2>
       <div className="flex justify-evenly items-start">
-        <div className=" md:w-[20vw] mr-36 md:mr-0">
+        {/* <div className=" md:w-[20vw] mr-36 md:mr-0">
           <LeftSideStack />
-        </div>
+        </div> */}
         <div className="w-[100vw] md:w-[80vw] 2xl:w-[45vw] flex justify-center items-center">
-          <div>
+          <div id="dont-remove-this-div">
             {/* Lid */}
             <Lid
               analyze={analyze}
@@ -156,9 +157,9 @@ export const MacbookScroll = ({
             )}
           </div>
         </div>
-        <div className=" md:w-[20vw] ml-36 md:ml-0">
+        {/* <div className=" md:w-[20vw] ml-36 md:ml-0">
           <RightSideStack />
-        </div>
+        </div> */}
       </div>
     </div>
   );
