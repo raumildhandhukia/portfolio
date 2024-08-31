@@ -104,10 +104,10 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
             <h3 className="text-red-400 text-xl font-light ml-2 min-h-[30px] max-h-[30px]">
               <Typewriter
                 words={[
-                  "Hire Me",
+                  "Open to Work",
                   "Let's Talk",
-                  "Hire Me",
-                  "Let's Collaborate",
+                  "Open to relocation",
+                  "Available for hire",
                 ]}
                 loop={true}
                 cursor={true}
