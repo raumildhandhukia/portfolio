@@ -14,7 +14,7 @@ export default function TimelineDemo() {
     {
       title: "June 2024",
       subtitle: "Sync 'N Style",
-      role: "Full Stack Developer",
+      role: "Full Stack Developer (Backend Leaning)",
       content: (
         <TextGenerateEffect
           speed={0.05}
