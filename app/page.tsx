@@ -15,7 +15,7 @@ import IconCloud from "@/components/ui/icon-cloud";
 const MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID || "";
 ReactGA.initialize(MEASUREMENT_ID);
 import { slugs } from "@/components/Experience";
-
+import { AskRaumil } from "@/components/AskRaumil";
 const Home = () => {
   useEffect(() => {
     ReactGA.send({
@@ -29,7 +29,9 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero analyze={ReactGA} />
+
         <Grid />
+
         <Experience />
         {/* <Experience /> */}
         <RecentProjects analyze={ReactGA} />
