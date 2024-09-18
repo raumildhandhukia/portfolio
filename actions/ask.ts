@@ -9,7 +9,7 @@ Question: ${query}
 
 Raumil Bharatbhai Dhandhukia
 Phone: (602) 706-4824 |Email: raumild@gmail.com | LinkedIn: https://linkedin.com/in/raumild/ | GitHub: https://github.com/raumildhandhukia | Portfolio: https://www.raumild.com/
-
+Location: Temple, AZ | Willing to relocate: Yes | Open to remote: Yes
 
 WORK EXPERIENCE
 Sync ‘N Style	June 2024 - Present 
