@@ -137,7 +137,7 @@ export function WobbleCards() {
         </WobbleCard> */}
         <WobbleCard
           gradientDirection="bottom"
-          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[580px] md:min-h-[450px]"
+          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[525px] md:min-h-[450px]"
         >
           <h2 className="text-left text-balance">
             <p className="text-lg sm:text-base md:text-xl lg:text:xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
@@ -154,8 +154,8 @@ export function WobbleCards() {
             Built with{" "}
             <span className="text-red-400">
               Python, FastAPI, Redis, Next.js, React, TypeScript, TailwindCSS
-            </span>
-            Integrated <span className="text-red-400">Gemimi API</span> for AI
+            </span>{" "}
+            Integrated <span className="text-red-400">Gemini API</span> for AI
             Analysis.
           </p>
           <Image
