@@ -137,11 +137,54 @@ export function WobbleCards() {
         </WobbleCard> */}
         <WobbleCard
           gradientDirection="bottom"
-          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[580px] md:min-h-[200px]"
+          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[580px] md:min-h-[450px]"
         >
           <h2 className="text-left text-balance">
             <p className="text-lg sm:text-base md:text-xl lg:text:xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
               Recently I built,
+              <br />
+              <span className="text-blue-400">
+                Algorithm Analysis Tool
+              </span>{" "}
+              providing Time Complexity and Space Complexity analysis with
+              visualization.
+            </p>
+          </h2>
+          <p className="mt-4 max-w-[36rem] text-left text-sm md:text-base/6 text-neutral-200">
+            Built with{" "}
+            <span className="text-red-400">
+              Python, FastAPI, Redis, Next.js, React, TypeScript, TailwindCSS
+            </span>
+            Integrated <span className="text-red-400">Gemimi API</span> for AI
+            Analysis.
+          </p>
+          <Image
+            src="/algometerai.png"
+            width={420}
+            height={420}
+            alt="linear demo image"
+            className={`absolute scale-[0.9] md:scale-[1] -right-[0%] lg:-right-[5%] 2xl:-right-[1%] grayscale filter -bottom-8 lg:top-26 2xl:top-38 object-contain rounded-2xl`}
+          />
+          <div className="flex justify-center md:justify-start my-5 md:mt-0">
+            <MagicButton
+              title="Try now"
+              icon={<FaLocationArrow />}
+              position="left"
+              handleClick={() =>
+                window.open("https://algometerai.com/", "_blank")
+              }
+              otherClasses="!bg-black-100"
+              widthProperty="md:w-max"
+            />
+          </div>
+        </WobbleCard>
+        <WobbleCard
+          gradientDirection="bottom"
+          containerClassName="col-span-1 lg:col-span-3 bg-black-100 min-h-[580px] md:min-h-[200px]"
+        >
+          <h2 className="text-left text-balance">
+            <p className="text-lg sm:text-base md:text-xl lg:text:xl xl:text-4xl 2xl:text-4xl font-bold tracking-[-0.0015em] text-white">
+              Checkout my side project,
               <br />
               <span className="text-blue-400">
                 AI-Powered Email Management SaaS
