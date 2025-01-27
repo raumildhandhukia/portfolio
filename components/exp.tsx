@@ -3,37 +3,37 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import {
-  ClassEffectForASU,
   ClassEffectForEmipro,
   ClassEffectForSetu,
-  ClassEffectForSyncAndStyle,
+  ClassEffectForSowFin,
+  ClassEffectForCelectAI,
 } from "./Experience";
 
 export default function TimelineDemo() {
   const data = [
     {
       title: "June 2024",
-      subtitle: "Sync 'N Style",
-      role: "Full Stack Developer (Backend Leaning)",
+      subtitle: "SowFin",
+      role: "Full Stack Developer",
       content: (
         <TextGenerateEffect
           speed={0.05}
           duration={5}
           isExperience={true}
-          inputArray={ClassEffectForSyncAndStyle}
+          inputArray={ClassEffectForSowFin}
         />
       ),
     },
     {
       title: "May 2023",
-      subtitle: "Arizona State University",
-      role: "Software Engineer",
+      subtitle: "Celect AI",
+      role: "Software Developer Intern",
       content: (
         <TextGenerateEffect
           speed={0.05}
           duration={5}
           isExperience={true}
-          inputArray={ClassEffectForASU}
+          inputArray={ClassEffectForCelectAI}
         />
       ),
     },
