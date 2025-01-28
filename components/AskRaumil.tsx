@@ -60,7 +60,7 @@ export function AskRaumil() {
   return (
     <div className="w-full max-w-[100vw] mx-auto p-4 mt-20">
       <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-        Ask me anything
+        Ask Raumil AI 
       </h1>
 
       <div className="flex space-x-2 mb-4 mt-6">

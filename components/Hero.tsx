@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import ReactGA from "react-ga4";
 import { useEffect, useState } from "react";
 import { AskRaumil } from "./AskRaumil";
-
+import Footer from "./Footer";
 const RESUME_PATH = "/resume/RaumilD_Resume";
 
 const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
@@ -81,6 +81,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
             ]}
             className="text-center text-[40px] md:text-4xl lg:text-6xl"
           />
+           <Footer analyze={analyze} dontShowFooterText={true} />
           <AskRaumil />
           <div className="flex flex-col md:flex-row gap-5 md:-mt-5">
             <Drawer>
@@ -139,6 +140,7 @@ const Hero = ({ analyze }: { analyze: typeof ReactGA }) => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

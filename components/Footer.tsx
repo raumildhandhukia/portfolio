@@ -30,7 +30,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { sendMessage } from "@/actions/sendMessage";
 
-const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
+const Footer = ({ analyze, dontShowFooterText }: { analyze: typeof ReactGA, dontShowFooterText?: boolean }) => {
   const [open, setOpen] = useState(false);
   const [sending, setSending] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -243,29 +243,33 @@ const Footer = ({ analyze }: { analyze: typeof ReactGA }) => {
           </DialogContent>
         </Dialog>
       </div>
-      <div className="flex md:mt-16 flex-col md:flex-row justify-between items-center gap-10">
-        <p className="md:text-base text-sm md:font-normal font-light order-2 md:order-1">
-          Copyright © 2024 Raumil Dhandhukia
-        </p>
+      
+      { !dontShowFooterText && (
+        <div className="flex md:mt-16 flex-col md:flex-row justify-between items-center gap-10">
+          <p className="md:text-base text-sm md:font-normal font-light order-2 md:order-1">
+            Copyright © 2024 Raumil Dhandhukia
+          </p>
 
-        <div className="flex items-center md:gap-3 gap-6 order-1 mt-10 md:mt-0 md:order-2">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <Link href={info.link}>
-                <Image
-                  src={info.img}
-                  alt="icons"
-                  width={20}
-                  height={20}
-                ></Image>
-              </Link>
-            </div>
-          ))}
+          <div className="flex items-center md:gap-3 gap-6 order-1 mt-10 md:mt-0 md:order-2">
+            {socialMedia.map((info) => (
+              <div
+                key={info.id}
+                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+              >
+                <Link href={info.link}>
+                  <Image
+                    src={info.img}
+                    alt="icons"
+                    width={20}
+                    height={20}
+                  ></Image>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
     </footer>
   );
 };
