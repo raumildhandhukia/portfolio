@@ -17,11 +17,11 @@ interface Explosion {
   y: number;
 }
 
+const laserColors = ['#00ff00', '#ff0040', '#00bfff', '#ffff00', '#ff6600'];
+
 const RetroLaserBackground = () => {
   const [lasers, setLasers] = useState<Laser[]>([]);
   const [explosions, setExplosions] = useState<Explosion[]>([]);
-
-  const laserColors = ['#00ff00', '#ff0040', '#00bfff', '#ffff00', '#ff6600'];
 
   useEffect(() => {
     const createLaser = () => {

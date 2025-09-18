@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import GameProvider from "@/components/GameProvider";
 
 const pressStart2P = Press_Start_2P({
   weight: "400",

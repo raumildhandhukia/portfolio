@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { experiences } from '../../constants';
-import { Experience } from '../../types';
 import { RetroLaserBackground } from '../effects';
 import {
   ExperienceSectionHeader,

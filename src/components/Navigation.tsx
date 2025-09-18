@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { FaGamepad, FaBriefcase, FaCode, FaCog, FaEnvelope } from 'react-icons/fa';
 import Logo from './navigation/Logo';
 import NavButton from './navigation/NavButton';
-import ScoreDisplay from './navigation/ScoreDisplay';
 import MobileMenu from './navigation/MobileMenu';
 import ProgressBar from './navigation/ProgressBar';
 
@@ -13,13 +12,13 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('intro');
   const [score, setScore] = useState(0);
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { id: 'intro', label: 'INTRO', icon: FaGamepad },
     { id: 'experience', label: 'EXPERIENCE', icon: FaBriefcase },
     { id: 'projects', label: 'PROJECTS', icon: FaCode },
     { id: 'technologies', label: 'TECH STACK', icon: FaCog },
     { id: 'contact', label: 'CONTACT', icon: FaEnvelope },
-  ];
+  ], []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

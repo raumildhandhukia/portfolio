@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { experiences } from "../../../constants";
-import { Experience } from "../../../types";
 
 interface ExperienceTimelineProps {
   selectedExp: string;

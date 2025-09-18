@@ -5,7 +5,6 @@ import {
   ContactHeader,
   ContactInfo,
   SocialLinks,
-  ResponseStats,
   ContactForm,
   ContactFooter,
 } from "./contact";

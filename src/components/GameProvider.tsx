@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTrophy, FaStar, FaRocket } from 'react-icons/fa';
 
@@ -62,30 +62,11 @@ const GameProvider = ({ children }: { children: ReactNode }) => {
   ]);
   const [newAchievement, setNewAchievement] = useState<Achievement | null>(null);
 
-  // Calculate level based on score
-  useEffect(() => {
-    const newLevel = Math.floor(score / 100) + 1;
-    if (newLevel > level) {
-      setLevel(newLevel);
-      if (newLevel >= 5) {
-        unlockAchievement('master');
-      }
-    }
-  }, [score, level]);
-
-  // Welcome achievement
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      unlockAchievement('first-visit');
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const addScore = (points: number) => {
     setScore(prev => prev + points);
   };
 
-  const unlockAchievement = (id: string) => {
+  const unlockAchievement = useCallback((id: string) => {
     setAchievements(prev => 
       prev.map(achievement => {
         if (achievement.id === id && !achievement.unlocked) {
@@ -96,7 +77,26 @@ const GameProvider = ({ children }: { children: ReactNode }) => {
         return achievement;
       })
     );
-  };
+  }, []);
+
+  // Calculate level based on score
+  useEffect(() => {
+    const newLevel = Math.floor(score / 100) + 1;
+    if (newLevel > level) {
+      setLevel(newLevel);
+      if (newLevel >= 5) {
+        unlockAchievement('master');
+      }
+    }
+  }, [score, level, unlockAchievement]);
+
+  // Welcome achievement
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      unlockAchievement('first-visit');
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [unlockAchievement]);
 
   const closeAchievement = () => {
     setNewAchievement(null);
