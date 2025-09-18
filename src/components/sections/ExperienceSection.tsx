@@ -20,7 +20,7 @@ const ExperienceSection = () => {
       <div className="w-full px-6 flex flex-col items-center gap-8 mx-auto">
         <ExperienceSectionHeader />
         
-        <div className="grid lg:grid-cols-3 gap-2 !mx-12 h-128 lg:grid-rows-1">
+        <div className="grid lg:grid-cols-3 gap-2 !mx-12 h-128 lg:grid-rows-1 w-[78rem]">
           <ExperienceTimeline 
             selectedExp={selectedExp} 
             onSelectExp={setSelectedExp} 
