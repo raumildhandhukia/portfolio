@@ -9,11 +9,15 @@ import {
   ContactForm,
   ContactFooter,
 } from "./contact";
+import { RetroCommBackground } from "../effects";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="h-screen flex items-center">
-      <div className="w-full flex justify-center">
+    <section id="contact" className="h-screen flex items-center relative">
+      {/* Retro Communications Background */}
+      <RetroCommBackground />
+      
+      <div className="w-full flex justify-center relative z-10">
         <div className="w-[78rem] max-w-full px-6 flex flex-col gap-8 items-center">
           <ContactHeader />
 

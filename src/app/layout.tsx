@@ -44,12 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pressStart2P.variable} font-mono`}>
-        <GameProvider>
+        {/* <GameProvider> */}
           <Navigation />
           <main className="min-h-screen">
             {children}
           </main>
-        </GameProvider>
+        {/* </GameProvider> */}
       </body>
     </html>
   );
