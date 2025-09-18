@@ -21,7 +21,7 @@ const IntroSection = () => {
       {/* Animated background elements */}
       <Background />
 
-      <div className="mx-auto px-4 relative z-10 h-full flex items-center justify-center">
+      <div className="w-full px-6 relative z-10 h-full flex items-center justify-center">
         {/* Main Content - Centered Layout */}
          <div className="flex flex-col lg:flex-row items-center justify-center gap-16 w-full px-6">
            {/* Left Side - Character/Avatar & Status */}

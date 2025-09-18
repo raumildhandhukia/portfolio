@@ -13,7 +13,7 @@ const Background = () => {
 
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {isClient && [...Array(15)].map((_, i) => (
+      {isClient && [...Array(120)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 bg-blue-500 opacity-20"

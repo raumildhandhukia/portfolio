@@ -30,7 +30,8 @@ const Navigation = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
         const sections = navItems.map(item => item.id);
-        const scrollPosition = window.scrollY + 200; // Increased offset for better detection
+        const navBarHeight = 60; // Same offset as scrollToSection
+        const scrollPosition = window.scrollY + navBarHeight + 100; // Account for nav bar + some buffer
         let newActiveSection = 'intro'; // Default to intro
 
         for (let i = sections.length - 1; i >= 0; i--) {
@@ -64,7 +65,14 @@ const Navigation = () => {
       // Set active section immediately on click
       setActiveSection(sectionId);
       
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Calculate the offset to account for the fixed navigation bar
+      const navBarHeight = 60; // Approximate height of the navigation bar
+      const elementPosition = element.offsetTop - navBarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
       setScore(prev => prev + 10); // Gamification: points for navigation
     }
   };

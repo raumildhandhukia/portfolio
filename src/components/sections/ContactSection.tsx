@@ -95,11 +95,12 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="min-h-screen py-20 relative">
-      <div className="container mx-auto px-4">
+      <div className="w-full px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
