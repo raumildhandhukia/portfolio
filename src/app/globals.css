@@ -1,26 +1,194 @@
 @import "tailwindcss";
+@import "nes.css/css/nes.min.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --nes-theme: dark;
+  --background: #212529;
+  --foreground: #f8f9fa;
+  --primary: #007bff;
+  --success: #28a745;
+  --warning: #ffc107;
+  --error: #dc3545;
+  --accent: #6f42c1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-press-start), 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom 8-bit animations */
+@keyframes pixel-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes retro-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+  }
+}
+
+@keyframes pixel-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.pixel-fade-in {
+  animation: pixel-fade-in 0.8s ease-out;
+}
+
+.retro-glow {
+  animation: retro-glow 2s ease-in-out infinite;
+}
+
+.pixel-bounce {
+  animation: pixel-bounce 1s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #343a40;
+  border: 2px solid #212529;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: 1px solid #212529;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Override NES.css for dark theme */
+.nes-container.is-dark {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.nes-btn.is-primary {
+  color: #fff;
+  background-color: var(--primary);
+}
+
+.nes-btn.is-success {
+  color: #fff;
+  background-color: var(--success);
+}
+
+.nes-btn.is-warning {
+  color: #212529;
+  background-color: var(--warning);
+}
+
+.nes-btn.is-error {
+  color: #fff;
+  background-color: var(--error);
+}
+
+/* Layout improvements */
+.nes-container {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Consistent spacing for containers */
+.nes-container.is-dark {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Button consistency */
+.nes-btn {
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+/* Ensure buttons with flex layout work properly */
+.nes-btn.flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .nes-btn {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+  
+  .nes-container {
+    margin-bottom: 0.75rem;
+  }
+  
+  body {
+    font-size: 11px;
+  }
+}
+
+/* Grid layout helpers */
+.layout-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.layout-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Consistent section spacing */
+section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0;
+  }
 }
