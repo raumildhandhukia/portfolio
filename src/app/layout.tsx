@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+import { GlobalPixelBackground } from "@/components/effects";
 
 const pressStart2P = Press_Start_2P({
   weight: "400",
@@ -43,9 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pressStart2P.variable} font-mono`}>
+        {/* Global Retro 8-bit Background */}
+        <GlobalPixelBackground />
+        
         {/* <GameProvider> */}
           <Navigation />
-          <main className="min-h-screen">
+          <main className="min-h-screen relative z-10">
             {children}
           </main>
         {/* </GameProvider> */}
