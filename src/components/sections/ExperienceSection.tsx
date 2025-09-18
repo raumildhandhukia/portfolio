@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { experiences } from '../../constants';
 import { Experience } from '../../types';
+import { RetroLaserBackground } from '../effects';
 import {
   ExperienceSectionHeader,
   ExperienceTimeline,
@@ -16,8 +17,9 @@ const ExperienceSection = () => {
   const currentExp = experiences.find(exp => exp.id === selectedExp) || experiences[0];
 
   return (
-    <section id="experience" className="py-20">
-      <div className="w-full px-6 flex flex-col items-center gap-8 mx-auto">
+    <section id="experience" className="py-20 relative overflow-hidden">
+      <RetroLaserBackground />
+      <div className="w-full px-6 flex flex-col items-center gap-8 mx-auto relative z-10">
         <ExperienceSectionHeader />
         
         <div className="grid lg:grid-cols-3 gap-2 !mx-12 h-128 lg:grid-rows-1 w-[78rem]">

@@ -64,6 +64,15 @@ body {
   }
 }
 
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 4px;
+  }
+}
+
 .pixel-fade-in {
   animation: pixel-fade-in 0.8s ease-out;
 }

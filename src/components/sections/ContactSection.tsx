@@ -18,31 +18,29 @@ const ContactSection = () => {
           <ContactHeader />
 
           <div className="flex flex-col gap-8 justify-center items-center w-full">
-            {/* Contact Information */}
-            <div className="flex gap-8 justify-center items-center w-full">
+            {/* Two Column Grid Layout */}
+            <div className="w-full max-w-6xl flex flex-col lg:flex-row gap-8 items-stretch">
+              {/* Left Column - Stacked Content */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="w-full lg:w-1/2 flex justify-center"
+                className="flex-1 flex flex-col gap-6 justify-start lg:justify-between"
               >
-                <div className="w-full max-w-md space-y-6">
-                  <ContactInfo />
+                <ContactInfo />
+                <div className="mt-auto">
                   <SocialLinks />
-                  <ResponseStats />
                 </div>
               </motion.div>
 
-              {/* Contact Form */}
+              {/* Right Column - Single Form */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="w-full lg:w-1/2 flex justify-center"
+                className="flex-1 flex"
               >
-                <div className="w-full max-w-md">
-                  <ContactForm />
-                </div>
+                <ContactForm />
               </motion.div>
             </div>
             <ContactFooter />

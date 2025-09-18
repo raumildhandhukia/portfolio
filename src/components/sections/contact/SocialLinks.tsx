@@ -53,7 +53,7 @@ const SocialLinks = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 border-2 border-gray-600 hover:border-blue-400 transition-all duration-300 text-center group"
+              className="p-4 border-2 border-gray-600 hover:border-blue-400 transition-all duration-300 text-center group flex flex-col items-center gap-2 !py-3"
             >
               <Icon className={`text-3xl mx-auto mb-2 transition-colors duration-300 ${social.color}`} />
               <div className="text-sm font-bold mb-1">{social.name}</div>
