@@ -73,6 +73,60 @@ body {
   }
 }
 
+@keyframes heist-glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 0);
+  }
+  94% {
+    transform: translate(2px, 0);
+  }
+  96% {
+    transform: translate(-1px, 0);
+  }
+  98% {
+    transform: translate(1px, 0);
+  }
+}
+
+@keyframes terminal-flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100%));
+    opacity: 0;
+  }
+}
+
+@keyframes security-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
 .pixel-fade-in {
   animation: pixel-fade-in 0.8s ease-out;
 }
@@ -83,6 +137,31 @@ body {
 
 .pixel-bounce {
   animation: pixel-bounce 1s infinite;
+}
+
+.heist-glitch {
+  animation: heist-glitch 5s infinite;
+}
+
+.terminal-flicker {
+  animation: terminal-flicker 2s ease-in-out infinite;
+}
+
+.data-stream {
+  animation: data-stream 4s linear infinite;
+}
+
+.security-pulse {
+  animation: security-pulse 2s ease-in-out infinite;
+}
+
+/* 8-bit Pixel Art Styling */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 /* Custom scrollbar */

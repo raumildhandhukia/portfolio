@@ -8,6 +8,7 @@ import {
   SkillsDisplay, 
   SkillOverview 
 } from './technologies';
+import { SpaceBackground } from '../effects';
 
 const TechnologiesSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -19,7 +20,10 @@ const TechnologiesSection = () => {
 
   return (
     <section id="technologies" className="min-h-screen py-20 relative">
-      <div className="w-full flex justify-center">
+      {/* Space Background Animation */}
+      <SpaceBackground />
+      
+      <div className="w-full flex justify-center relative z-10">
         <div className="w-[78rem] px-6">
         <TechnologiesHeader />
         
